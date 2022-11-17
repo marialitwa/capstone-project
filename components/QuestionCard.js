@@ -41,8 +41,6 @@ const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 50vw;
-  margin: 40px;
 `;
 
 const StyledQuestion = styled.label`

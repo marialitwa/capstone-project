@@ -1,14 +1,21 @@
-// import { nanoid } from "nanoid";
+import styled from "styled-components";
 import QuestionCard from "../components/QuestionCard";
 import Title from "../components/Title";
 
 export default function Home() {
   return (
     <>
-      <main>
+      <Main>
         <Title />
         <QuestionCard />
-      </main>
+      </Main>
     </>
   );
 }
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
