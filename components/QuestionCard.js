@@ -9,6 +9,7 @@ export default function QuestionCard() {
     event.preventDefault();
 
     // Use setAnswer here instead of alert like in example from here: https://www.w3schools.com/react/showreact.asp?filename=demo2_react_forms_submit
+    // Test
     setAnswer(event.target.elements.morningQuestion.value);
 
     event.target.reset();
