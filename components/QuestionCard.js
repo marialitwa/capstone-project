@@ -8,10 +8,13 @@ export default function QuestionCard() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Use setAnswer here instead of alert like in example from here: https://www.w3schools.com/react/showreact.asp?filename=demo2_react_forms_submit
-    // Test
-    setAnswer(event.target.elements.morningQuestion.value);
+    const formElements = event.target.elements;
 
+    // Use setAnswer below here instead of alert like in example of 'React Forms':
+    // https://www.w3schools.com/react/showreact.asp?filename=demo2_react_forms_submit
+    setAnswer(formElements.morningQuestion.value);
+
+    // formElements.morningQuestion.focus();
     event.target.reset();
   };
 
@@ -27,7 +30,7 @@ export default function QuestionCard() {
           placeholder="Beginne zu schreiben..."
           rows="15"
           cols="30"
-          maxlength="500"
+          maxLength="500"
         ></textarea>
         <SubmitButton />
       </Form>

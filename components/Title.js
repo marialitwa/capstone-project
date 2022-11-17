@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default function Title() {
-  return <Heading>BEST OF</Heading>;
+  return <Heading>Das Beste des Tages</Heading>;
 }
 
 const Heading = styled.h2`
