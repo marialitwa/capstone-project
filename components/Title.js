@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export default function Title() {
-  return <Heading>Das Beste des Tages</Heading>;
+  return <Heading>BEST OF</Heading>;
 }
 
 const Heading = styled.h2`
-  display: flex;
-  margin: 40px;
+  text-align: center;
+  margin: 2rem;
 `;

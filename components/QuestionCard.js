@@ -18,7 +18,9 @@ export default function QuestionCard() {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <label htmlFor="morning-question">Worauf freust du dich heute?</label>
+        <StyledQuestion htmlFor="morning-question">
+          Worauf freust du dich heute?
+        </StyledQuestion>
         <textarea
           id="morning-question"
           name="morningQuestion"
@@ -38,6 +40,11 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   max-width: 50vw;
   margin: 40px;
+`;
+
+const StyledQuestion = styled.label`
+  margin: 1rem;
 `;
