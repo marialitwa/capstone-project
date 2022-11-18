@@ -24,6 +24,7 @@ export default function QuestionForm({ onAddEntry }) {
         rows="15"
         cols="30"
         maxLength="500"
+        required
       ></textarea>
       <StyledSubmitButton type="submit">Speichern</StyledSubmitButton>
     </Form>
