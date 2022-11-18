@@ -2,12 +2,26 @@ import GlobalStyles from "../components/GlobalStyles";
 import { useLocalStorage } from "../helpers/hooks";
 
 function MyApp({ Component, pageProps }) {
-  const [answer, setAnswer] = useLocalStorage("morningAnswer", {});
+  const [morningAnswers, setMorningAnswers] = useLocalStorage(
+    "morningAnswers",
+    []
+  );
+
+  function addMorningAnswer(answer) {
+    setMorningAnswers((previousMorningAnswers) => [
+      ...previousMorningAnswers,
+      { id: crypto.randomUUID(), text: answer },
+    ]);
+  }
 
   return (
     <>
       <GlobalStyles />
-      <Component {...pageProps} answer={answer} setAnswer={setAnswer} />
+      <Component
+        {...pageProps}
+        morningAnswers={morningAnswers}
+        onAddMorningAnswer={addMorningAnswer}
+      />
     </>
   );
 }
