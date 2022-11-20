@@ -4,13 +4,17 @@ import { useLocalStorage } from "../helpers/hooks";
 function MyApp({ Component, pageProps }) {
   const [morningAnswers, setMorningAnswers] = useLocalStorage(
     "morningAnswers",
+
     []
   );
 
   function addMorningAnswer(answer) {
     setMorningAnswers((previousMorningAnswers) => [
       ...previousMorningAnswers,
-      { id: crypto.randomUUID(), text: answer },
+      {
+        id: crypto.randomUUID(),
+        text: answer,
+      },
     ]);
   }
 

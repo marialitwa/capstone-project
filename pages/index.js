@@ -8,7 +8,9 @@ export default function Home({ morningAnswers, onAddMorningAnswer }) {
       <QuestionForm onAddEntry={onAddMorningAnswer} />
       <ul>
         {morningAnswers.map((morningAnswer) => (
-          <li key={morningAnswer.id}>{morningAnswer.text}</li>
+          <AnswerListItems key={morningAnswer.id}>
+            {morningAnswer.text}
+          </AnswerListItems>
         ))}
       </ul>
     </Main>
@@ -24,4 +26,11 @@ const Main = styled.main`
 const Heading = styled.h1`
   text-align: center;
   margin: 2rem;
+`;
+
+const AnswerListItems = styled.li`
+  list-style: none;
+  margin: 20px;
+  margin-left: -20px;
+  max-width: 250px;
 `;

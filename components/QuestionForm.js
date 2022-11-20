@@ -5,10 +5,12 @@ export default function QuestionForm({ onAddEntry }) {
     event.preventDefault();
 
     const form = event.target;
-    const answer = form.elements.answer.value;
+
+    const answer = form.elements.answer.value.trim();
+
+    if (answer === "") return;
 
     onAddEntry(answer);
-
     form.reset();
   }
 
