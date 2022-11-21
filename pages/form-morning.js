@@ -5,8 +5,8 @@ import styled from "styled-components";
 export default function MorningForm({ morningAnswers, onAddMorningAnswer }) {
   return (
     <>
-      <Link href="/">Home</Link>
-      <h1>Form for the MORNING goes here</h1>
+      <StyledLink href="/">Home</StyledLink>
+      <h1>Morning Form goes here</h1>
       <QuestionForm onAddEntry={onAddMorningAnswer} />
       <ul>
         {morningAnswers.map((morningAnswer) => (
@@ -22,6 +22,11 @@ export default function MorningForm({ morningAnswers, onAddMorningAnswer }) {
 const AnswerListItems = styled.li`
   list-style: none;
   margin: 20px;
-  margin-left: -20px;
   max-width: 250px;
+`;
+
+const StyledLink = styled.a`
+  display: flex;
+  margin: 10px;
+  color: black;
 `;
