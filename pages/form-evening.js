@@ -6,7 +6,7 @@ export default function EveningForm({ eveningAnswers, onAddEveningAnswer }) {
   return (
     <>
       <StyledLink href="/">Home</StyledLink>
-      <h1>Evening Form goes here</h1>
+      <Heading>Guten Abend.</Heading>
       <QuestionForm onAddEntry={onAddEveningAnswer} />
 
       <ul>
@@ -19,6 +19,11 @@ export default function EveningForm({ eveningAnswers, onAddEveningAnswer }) {
     </>
   );
 }
+
+const Heading = styled.h1`
+  text-align: center;
+  margin: 2rem;
+`;
 
 const AnswerListItems = styled.li`
   list-style: none;

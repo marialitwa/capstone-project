@@ -6,7 +6,7 @@ export default function MorningForm({ morningAnswers, onAddMorningAnswer }) {
   return (
     <>
       <StyledLink href="/">Home</StyledLink>
-      <h1>Morning Form goes here</h1>
+      <Heading>Guten Morgen.</Heading>
       <QuestionForm onAddEntry={onAddMorningAnswer} />
       <ul>
         {morningAnswers.map((morningAnswer) => (
@@ -18,6 +18,11 @@ export default function MorningForm({ morningAnswers, onAddMorningAnswer }) {
     </>
   );
 }
+
+const Heading = styled.h1`
+  text-align: center;
+  margin: 2rem;
+`;
 
 const AnswerListItems = styled.li`
   list-style: none;
