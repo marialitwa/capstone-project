@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     * {
-        box-sizing: border-box;
+        box-sizing: border-box;     
     }
 `;
 
