@@ -8,9 +8,25 @@ function MyApp({ Component, pageProps }) {
     []
   );
 
+  const [eveningAnswers, setEveningAnswers] = useLocalStorage(
+    "eveningAnswers",
+
+    []
+  );
+
   function addMorningAnswer(answer) {
     setMorningAnswers((previousMorningAnswers) => [
       ...previousMorningAnswers,
+      {
+        id: crypto.randomUUID(),
+        text: answer,
+      },
+    ]);
+  }
+
+  function addEveningAnswer(answer) {
+    setEveningAnswers((previousEveningAnswers) => [
+      ...previousEveningAnswers,
       {
         id: crypto.randomUUID(),
         text: answer,
@@ -25,6 +41,8 @@ function MyApp({ Component, pageProps }) {
         {...pageProps}
         morningAnswers={morningAnswers}
         onAddMorningAnswer={addMorningAnswer}
+        eveningAnswers={eveningAnswers}
+        onAddEveningAnswer={addEveningAnswer}
       />
     </>
   );
