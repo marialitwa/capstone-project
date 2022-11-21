@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import QuestionForm from "../components/QuestionForm";
+import Link from "next/link";
 
 export default function Home({ morningAnswers, onAddMorningAnswer }) {
   return (
@@ -13,6 +14,8 @@ export default function Home({ morningAnswers, onAddMorningAnswer }) {
           </AnswerListItems>
         ))}
       </ul>
+      <Link href="/form-morning">Go to morning question</Link>
+      <Link href="/form-evening">Go to evening question</Link>
     </Main>
   );
 }
