@@ -7,10 +7,7 @@ export default function MorningForm({ morningAnswers, onAddMorningAnswer }) {
     <>
       <StyledLink href="/">Home</StyledLink>
       <Heading>Guten Morgen.</Heading>
-      {/* aria-labelled Verknüpfung aus QuestionForm mit id hie richtig!?? */}
-      <StyledQuestion id="Frage am Morgen">
-        Worauf freust du dich heute?
-      </StyledQuestion>
+      <StyledQuestion>Worauf freust du dich heute?</StyledQuestion>
       <QuestionForm onAddEntry={onAddMorningAnswer} />
       <ul>
         {morningAnswers.map((morningAnswer) => (

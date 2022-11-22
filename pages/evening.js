@@ -7,10 +7,7 @@ export default function EveningForm({ eveningAnswers, onAddEveningAnswer }) {
     <>
       <StyledLink href="/">Home</StyledLink>
       <Heading>Guten Abend.</Heading>
-      {/* aria-labelled Verknüpfung aus QuestionForm mit id hie richtig!?? */}
-      <StyledQuestion id="Frage am Abend">
-        Was war heute das Beste des Tages?
-      </StyledQuestion>
+      <StyledQuestion>Was war heute das Beste des Tages?</StyledQuestion>
       <QuestionForm onAddEntry={onAddEveningAnswer} />
       <ul>
         {eveningAnswers.map((eveningAnswer) => (

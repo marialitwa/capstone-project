@@ -16,9 +16,6 @@ export default function QuestionForm({ onAddEntry }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      aria-la
-      <label htmlFor="answer" aria-labelledby="Frage am Morgen"></label>
-      <label htmlFor="answer" aria-labelledby="Frage am Abend"></label>
       <textarea
         id="answer"
         name="answer"

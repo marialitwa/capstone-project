@@ -1,9 +1,40 @@
 import styled from "styled-components";
 
 export default function Home() {
+  const week = [
+    "Sonntag",
+    "Montag",
+    "Dienstag",
+    "Mittwoch",
+    "Donnerstag",
+    "Freitag",
+    "Samstag",
+  ];
+
+  const month = [
+    "Januar",
+    "Februar",
+    "März",
+    "April",
+    "Mai",
+    "Juni",
+    "Juli",
+    "August",
+    "September",
+    "Oktober",
+    "November",
+    "Dezember",
+  ];
+  const current = new Date();
+
+  const date = `${week[current.getDay()]}, ${current.getDate()}. ${
+    month[current.getMonth()]
+  }`;
+
   return (
     <Main>
       <Heading>Das Beste des Tages.</Heading>
+      <CurrentDate>{date}</CurrentDate>
       <StyledLink href="/morning">Frage am Morgen</StyledLink>
       <StyledLink href="/evening">Frage am Abend</StyledLink>
     </Main>
@@ -18,7 +49,11 @@ const Main = styled.main`
 
 const Heading = styled.h1`
   text-align: center;
-  margin: 61px 30px 160px;
+  margin: 61px 30px 50px;
+`;
+
+const CurrentDate = styled.p`
+  margin-bottom: 120px;
 `;
 
 const StyledLink = styled.a`
