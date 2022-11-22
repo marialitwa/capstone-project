@@ -16,9 +16,9 @@ export default function QuestionForm({ onAddEntry }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <StyledQuestion htmlFor="answer">
-        Worauf freust du dich heute?
-      </StyledQuestion>
+      aria-la
+      <label htmlFor="answer" aria-labelledby="Frage am Morgen"></label>
+      <label htmlFor="answer" aria-labelledby="Frage am Abend"></label>
       <textarea
         id="answer"
         name="answer"
@@ -39,9 +39,9 @@ const Form = styled.form`
   align-items: center;
 `;
 
-const StyledQuestion = styled.label`
-  margin: 1rem;
-`;
+// const StyledQuestion = styled.label`
+//   margin: 1rem;
+// `;
 
 const StyledSubmitButton = styled.button`
   margin: 1rem;

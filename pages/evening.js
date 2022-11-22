@@ -7,8 +7,11 @@ export default function EveningForm({ eveningAnswers, onAddEveningAnswer }) {
     <>
       <StyledLink href="/">Home</StyledLink>
       <Heading>Guten Abend.</Heading>
+      {/* aria-labelled Verknüpfung aus QuestionForm mit id hie richtig!?? */}
+      <StyledQuestion id="Frage am Abend">
+        Was war heute das Beste des Tages?
+      </StyledQuestion>
       <QuestionForm onAddEntry={onAddEveningAnswer} />
-
       <ul>
         {eveningAnswers.map((eveningAnswer) => (
           <AnswerListItems key={eveningAnswer.id}>
@@ -23,16 +26,25 @@ export default function EveningForm({ eveningAnswers, onAddEveningAnswer }) {
 const Heading = styled.h1`
   text-align: center;
   margin: 2rem;
+  margin-bottom: 55px;
 `;
 
 const AnswerListItems = styled.li`
   list-style: none;
   margin: 20px;
   max-width: 250px;
+  font-size: 0.95rem;
 `;
 
 const StyledLink = styled.a`
   display: flex;
   margin: 10px;
   color: black;
+`;
+
+const StyledQuestion = styled.p`
+  display: flex;
+  justify-content: center;
+  margin: 0.7rem;
+  font-size: 0.95rem;
 `;

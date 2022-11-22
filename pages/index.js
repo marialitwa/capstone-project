@@ -3,9 +3,9 @@ import styled from "styled-components";
 export default function Home() {
   return (
     <Main>
-      <Heading>Das Beste des Tages</Heading>
-      <StyledLink href="/form-morning">Frage am Morgen</StyledLink>
-      <StyledLink href="/form-evening">Frage am Abend</StyledLink>
+      <Heading>Das Beste des Tages.</Heading>
+      <StyledLink href="/morning">Frage am Morgen</StyledLink>
+      <StyledLink href="/evening">Frage am Abend</StyledLink>
     </Main>
   );
 }
@@ -18,8 +18,7 @@ const Main = styled.main`
 
 const Heading = styled.h1`
   text-align: center;
-  margin: 2rem;
-  margin-bottom: 50%;
+  margin: 61px 30px 160px;
 `;
 
 const StyledLink = styled.a`
