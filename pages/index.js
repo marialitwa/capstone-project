@@ -1,18 +1,19 @@
+import Link from "next/link";
 import styled from "styled-components";
-import QuestionForm from "../components/QuestionForm";
 
-export default function Home({ morningAnswers, onAddMorningAnswer }) {
+export default function Home() {
+  const date = new Date().toLocaleString("de-DE", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  });
+
   return (
     <Main>
-      <Heading>Das Beste des Tages</Heading>
-      <QuestionForm onAddEntry={onAddMorningAnswer} />
-      <ul>
-        {morningAnswers.map((morningAnswer) => (
-          <AnswerListItems key={morningAnswer.id}>
-            {morningAnswer.text}
-          </AnswerListItems>
-        ))}
-      </ul>
+      <Heading>Das Beste des Tages.</Heading>
+      <CurrentDate>{date}</CurrentDate>
+      <StyledLink href="/morning">Frage am Morgen</StyledLink>
+      <StyledLink href="/evening">Frage am Abend</StyledLink>
     </Main>
   );
 }
@@ -25,12 +26,21 @@ const Main = styled.main`
 
 const Heading = styled.h1`
   text-align: center;
-  margin: 2rem;
+  margin: 61px 30px 50px;
 `;
 
-const AnswerListItems = styled.li`
-  list-style: none;
-  margin: 20px;
-  margin-left: -20px;
-  max-width: 250px;
+const CurrentDate = styled.p`
+  margin-bottom: 120px;
+`;
+
+const StyledLink = styled(Link)`
+  margin: 1rem;
+  padding: 1.2rem;
+  background-color: #434343;
+  color: #fdfcfb;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
 `;

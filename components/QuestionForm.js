@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function QuestionForm({ onAddEntry }) {
+export default function QuestionForm({ onAddEntry, questionText }) {
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -16,9 +16,7 @@ export default function QuestionForm({ onAddEntry }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <StyledQuestion htmlFor="answer">
-        Worauf freust du dich heute?
-      </StyledQuestion>
+      <label forHtml="answer">{questionText}</label>
       <textarea
         id="answer"
         name="answer"
@@ -37,10 +35,6 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const StyledQuestion = styled.label`
-  margin: 1rem;
 `;
 
 const StyledSubmitButton = styled.button`
