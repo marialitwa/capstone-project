@@ -2,18 +2,20 @@ import Link from "next/link";
 import QuestionForm from "../components/QuestionForm";
 import styled from "styled-components";
 
-export default function EveningForm({ eveningAnswers, onAddEveningAnswer }) {
+export default function EveningPage({ eveningAnswers, onAddEveningAnswer }) {
   return (
     <>
       <StyledLink href="/">Home</StyledLink>
       <Heading>Guten Abend.</Heading>
-      <StyledQuestion>Was war heute das Beste des Tages?</StyledQuestion>
-      <QuestionForm onAddEntry={onAddEveningAnswer} />
+      <QuestionForm
+        onAddEntry={onAddEveningAnswer}
+        questionText="Was war das Beste des Tages?"
+      />
       <ul>
         {eveningAnswers.map((eveningAnswer) => (
-          <AnswerListItems key={eveningAnswer.id}>
+          <AnswerListItem key={eveningAnswer.id}>
             {eveningAnswer.text}
-          </AnswerListItems>
+          </AnswerListItem>
         ))}
       </ul>
     </>
@@ -26,14 +28,14 @@ const Heading = styled.h1`
   margin-bottom: 55px;
 `;
 
-const AnswerListItems = styled.li`
+const AnswerListItem = styled.li`
   list-style: none;
   margin: 20px;
   max-width: 250px;
   font-size: 0.95rem;
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   display: flex;
   margin: 10px;
   color: black;

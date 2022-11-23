@@ -1,35 +1,12 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export default function Home() {
-  const week = [
-    "Sonntag",
-    "Montag",
-    "Dienstag",
-    "Mittwoch",
-    "Donnerstag",
-    "Freitag",
-    "Samstag",
-  ];
-
-  const month = [
-    "Januar",
-    "Februar",
-    "März",
-    "April",
-    "Mai",
-    "Juni",
-    "Juli",
-    "August",
-    "September",
-    "Oktober",
-    "November",
-    "Dezember",
-  ];
-  const current = new Date();
-
-  const date = `${week[current.getDay()]}, ${current.getDate()}. ${
-    month[current.getMonth()]
-  }`;
+  const date = new Date().toLocaleString("de-DE", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  });
 
   return (
     <Main>
@@ -56,7 +33,7 @@ const CurrentDate = styled.p`
   margin-bottom: 120px;
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   margin: 1rem;
   padding: 1.2rem;
   background-color: #434343;

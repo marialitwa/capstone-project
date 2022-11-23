@@ -2,18 +2,20 @@ import Link from "next/link";
 import QuestionForm from "../components/QuestionForm";
 import styled from "styled-components";
 
-export default function MorningForm({ morningAnswers, onAddMorningAnswer }) {
+export default function MorningPage({ morningAnswers, onAddMorningAnswer }) {
   return (
     <>
       <StyledLink href="/">Home</StyledLink>
       <Heading>Guten Morgen.</Heading>
-      <StyledQuestion>Worauf freust du dich heute?</StyledQuestion>
-      <QuestionForm onAddEntry={onAddMorningAnswer} />
+      <QuestionForm
+        onAddEntry={onAddMorningAnswer}
+        questionText="Worauf freust du dich heute?"
+      />
       <ul>
         {morningAnswers.map((morningAnswer) => (
-          <AnswerListItems key={morningAnswer.id}>
+          <AnswerListItem key={morningAnswer.id}>
             {morningAnswer.text}
-          </AnswerListItems>
+          </AnswerListItem>
         ))}
       </ul>
     </>
@@ -26,14 +28,14 @@ const Heading = styled.h1`
   margin-bottom: 55px;
 `;
 
-const AnswerListItems = styled.li`
+const AnswerListItem = styled.li`
   list-style: none;
   margin: 20px;
   max-width: 250px;
   font-size: 0.95rem;
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   display: flex;
   margin: 10px;
   color: black;
