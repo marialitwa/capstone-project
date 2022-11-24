@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }) {
       {
         id: crypto.randomUUID(),
         text: answer,
+        createdDate: new Date(),
       },
     ]);
   }
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps }) {
       {
         id: crypto.randomUUID(),
         text: answer,
+        createdDate: new Date(),
       },
     ]);
   }

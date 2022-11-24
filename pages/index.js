@@ -14,6 +14,7 @@ export default function Home() {
       <CurrentDate>{date}</CurrentDate>
       <StyledLink href="/morning">Frage am Morgen</StyledLink>
       <StyledLink href="/evening">Frage am Abend</StyledLink>
+      <StyledLink href="/answers">Deine Einträge</StyledLink>
     </Main>
   );
 }
@@ -34,7 +35,7 @@ const CurrentDate = styled.p`
 `;
 
 const StyledLink = styled(Link)`
-  margin: 1rem;
+  margin: 0.5rem;
   padding: 1.2rem;
   background-color: #434343;
   color: #fdfcfb;
