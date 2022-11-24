@@ -1,6 +1,7 @@
 import Link from "next/link";
 import QuestionForm from "../components/QuestionForm";
 import styled from "styled-components";
+// import MorningAnswerListItem from "../components/MorningAnswerListItem";
 
 export default function MorningPage({ morningAnswers, onAddMorningAnswer }) {
   return (
@@ -9,15 +10,16 @@ export default function MorningPage({ morningAnswers, onAddMorningAnswer }) {
       <Heading>Guten Morgen.</Heading>
       <QuestionForm
         onAddEntry={onAddMorningAnswer}
-        questionText="Worauf freust du dich heute?"
+        questionText="Worauf freust du dich im Moment?"
       />
-      <ul>
+      {/* <MorningAnswerListItem /> */}
+      {/* <ul>
         {morningAnswers.map((morningAnswer) => (
           <AnswerListItem key={morningAnswer.id}>
             {morningAnswer.text}
           </AnswerListItem>
         ))}
-      </ul>
+      </ul> */}
     </>
   );
 }
@@ -28,21 +30,8 @@ const Heading = styled.h1`
   margin-bottom: 55px;
 `;
 
-const AnswerListItem = styled.li`
-  list-style: none;
-  margin: 20px;
-  max-width: 250px;
-  font-size: 0.95rem;
-`;
-
 const StyledLink = styled(Link)`
   display: flex;
   margin: 10px;
   color: black;
-`;
-
-const StyledQuestion = styled.p`
-  display: flex;
-  justify-content: center;
-  font-size: 0.95rem;
 `;

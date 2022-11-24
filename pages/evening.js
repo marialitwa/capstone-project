@@ -9,15 +9,15 @@ export default function EveningPage({ eveningAnswers, onAddEveningAnswer }) {
       <Heading>Guten Abend.</Heading>
       <QuestionForm
         onAddEntry={onAddEveningAnswer}
-        questionText="Was war das Beste des Tages?"
+        questionText="Was war heute das Beste des Tages?"
       />
-      <ul>
+      {/* <ul>
         {eveningAnswers.map((eveningAnswer) => (
           <AnswerListItem key={eveningAnswer.id}>
             {eveningAnswer.text}
           </AnswerListItem>
         ))}
-      </ul>
+      </ul> */}
     </>
   );
 }
@@ -28,22 +28,15 @@ const Heading = styled.h1`
   margin-bottom: 55px;
 `;
 
-const AnswerListItem = styled.li`
-  list-style: none;
-  margin: 20px;
-  max-width: 250px;
-  font-size: 0.95rem;
-`;
+// const AnswerListItem = styled.li`
+//   list-style: none;
+//   margin: 20px;
+//   max-width: 250px;
+//   font-size: 0.95rem;
+// `;
 
 const StyledLink = styled(Link)`
   display: flex;
   margin: 10px;
   color: black;
-`;
-
-const StyledQuestion = styled.p`
-  display: flex;
-  justify-content: center;
-  margin: 0.7rem;
-  font-size: 0.95rem;
 `;

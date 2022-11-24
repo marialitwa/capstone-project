@@ -8,7 +8,8 @@ export default function QuestionForm({ onAddEntry, questionText }) {
 
     const answer = form.elements.answer.value.trim();
 
-    if (answer === "") return;
+    if (answer === "")
+      return alert("Bitte schreibe deine Antwort in das Textfeld");
 
     onAddEntry(answer);
     form.reset();
