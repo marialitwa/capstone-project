@@ -1,11 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Footer({ date }) {
-  console.log(date);
+export default function Footer() {
+  // const date = new Date().toLocaleString("de-DE", {
+  //   weekday: "short",
+  //   day: "numeric",
+  //   month: "numeric",
+  //   year: "numeric",
+  // });
+
   return (
     <StyledFooter>
-      <p>{`Footer with ${date} and Navigation`}</p>
+      {/* {
+        id: crypto.randomUUID(),
+        text: answer,
+        createdDate: new Date(),
+      } */}
+
+      <p>{`Footer with ${createdDate} and Navigation`}</p>
     </StyledFooter>
   );
 }
