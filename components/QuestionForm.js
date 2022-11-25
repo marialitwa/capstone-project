@@ -12,6 +12,7 @@ export default function QuestionForm({ onAddEntry, questionText }) {
       return alert("Bitte schreibe deine Antwort in das Textfeld");
 
     onAddEntry(answer);
+    // router.push / answers setVariante
     form.reset();
   }
 
