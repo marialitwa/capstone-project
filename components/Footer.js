@@ -17,7 +17,7 @@ export default function Footer() {
         createdDate: new Date(),
       } */}
 
-      <p>{`Footer with ${createdDate} and Navigation`}</p>
+      <p>Footer with date and Navigation</p>
     </StyledFooter>
   );
 }
