@@ -31,5 +31,4 @@ const StyledAnswer = styled.p`
   font-weight: 300;
   line-height: 140%;
   max-width: 100vw;
-  _border: 1px solid blue;
 `;

@@ -49,5 +49,4 @@ const StyledLink = styled(Link)`
   height: 60px;
   text-align: center;
   border-radius: 3px;
-  _border-radius: 52% 48% 49% 51% / 63% 33% 67% 37%;
 `;

@@ -12,7 +12,6 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
   if (!answerDate) return;
   const [day, month, year] = answerDate.split("-");
 
-  // Monate fangen bei 0 an, deswegen month -1, 10 = November, 9 = Oktober etc.
   const answerPageDate = new Date(year, Number(month) - 1, day);
 
   const filteredMorningAnswers = morningAnswers.filter((morningAnswer) => {
@@ -25,7 +24,6 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
     return createdDate.toDateString() === answerPageDate.toDateString();
   });
 
-  // Number(day) - 1 => zählt einen Tag zurück
   const previousDate = new Date(year, Number(month) - 1, Number(day) - 1)
     .toLocaleDateString("de-DE")
     .replaceAll(".", "-");

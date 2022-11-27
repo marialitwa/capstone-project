@@ -6,10 +6,9 @@ export default function MorningPage({ onAddMorningAnswer }) {
   return (
     <>
       <StyledLink href="/">Home</StyledLink>
-
-      {/* <StyledLink href="/">
+      <StyledLink href="/">
         <img src="assets/icons/icons8-left-arrow-50.png" />
-      </StyledLink> */}
+      </StyledLink>
 
       <Heading>Guten Morgen.</Heading>
       <QuestionForm
