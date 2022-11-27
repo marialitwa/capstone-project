@@ -18,7 +18,7 @@ export default function Home() {
       <CurrentDate>{date}</CurrentDate>
       <StyledLink href="/morning">Frage am Morgen</StyledLink>
       <StyledLink href="/evening">Frage am Abend</StyledLink>
-      <StyledLink href={`/answers/${currentDate}`}>Deine Einträge</StyledLink>
+      <StyledLink href={`/answers/${currentDate}`}>Deine Antworten</StyledLink>
     </Main>
   );
 }
@@ -44,8 +44,11 @@ const StyledLink = styled(Link)`
   background-color: #434343;
   color: #fdfcfb;
   border: none;
-  border-radius: 3px;
   text-decoration: none;
   width: 200px;
+  height: 60px;
   text-align: center;
+  border-radius: 52% 48% 49% 51% / 63% 33% 67% 37%;
+  _border-radius: 52% 48% 49% 51% / 67% 27% 73% 33%;
+  _border-radius: 3px;
 `;

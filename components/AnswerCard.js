@@ -15,15 +15,21 @@ export default function AnswerCard({ questionText, answerText }) {
 const StyledQuestion = styled.p`
   display: flex;
   justify-content: center;
-  font-size: 0.9rem;
-  color: violet;
+  margin-bottom: -10px;
+  font-size: 0.8rem;
+  color: #757474;
+  font-weight: 300;
 `;
 
 const StyledAnswer = styled.p`
   display: flex;
   justify-content: center;
   padding: 5px 40px;
-  font-size: 0.95rem;
+  margin-bottom: 60px;
+  font-size: 1rem;
   text-align: center;
-  border: 1px solid violet;
+  font-weight: 300;
+  line-height: 140%;
+  max-width: 100vw;
+  _border: 1px solid blue;
 `;

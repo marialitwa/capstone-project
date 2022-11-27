@@ -9,7 +9,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     * {
-        box-sizing: border-box;     
+        box-sizing: border-box;
+        background-color: #F5F4F4;     
     }
 `;
 

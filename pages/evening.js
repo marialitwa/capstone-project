@@ -9,7 +9,7 @@ export default function EveningPage({ eveningAnswers, onAddEveningAnswer }) {
       <Heading>Guten Abend.</Heading>
       <QuestionForm
         onAddEntry={onAddEveningAnswer}
-        questionText="Was war heute das Beste des Tages?"
+        questionText="Was war dein Highlight des Tages?"
       />
       {/* <ul>
         {eveningAnswers.map((eveningAnswer) => (
