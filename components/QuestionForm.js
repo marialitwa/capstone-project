@@ -12,7 +12,6 @@ export default function QuestionForm({ onAddEntry, questionText }) {
       return alert("Bitte schreibe deine Antwort in das Textfeld");
 
     onAddEntry(answer);
-    // router.push / answers setVariante
     form.reset();
   }
 
@@ -46,10 +45,8 @@ const StyledSubmitButton = styled.button`
   color: #fdfcfb;
   border: none;
   border-radius: 3px;
-  _font-weight: 300px;
   letter-spacing: 0.05rem;
   font-size: 0.9rem;
-  _text-transform: uppercase;
 `;
 
 const StyledQuestion = styled.label`

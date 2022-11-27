@@ -3,8 +3,6 @@ import QuestionForm from "../components/QuestionForm";
 import styled from "styled-components";
 
 export default function MorningPage({ onAddMorningAnswer }) {
-  // set use State
-
   return (
     <>
       <StyledLink href="/">Home</StyledLink>

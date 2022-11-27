@@ -12,7 +12,7 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
   if (!answerDate) return;
   const [day, month, year] = answerDate.split("-");
 
-  //Monate fangen bei 0 an, deswegen month -1, 10 = November, 9 = Oktober etc.
+  // Monate fangen bei 0 an, deswegen month -1, 10 = November, 9 = Oktober etc.
   const answerPageDate = new Date(year, Number(month) - 1, day);
 
   const filteredMorningAnswers = morningAnswers.filter((morningAnswer) => {
@@ -40,7 +40,6 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
     <>
       <Main>
         <StyledLink href="/">Home</StyledLink>
-
         <Heading>Deine Antworten.</Heading>
         <EntryDate>{answerPageDate.toLocaleDateString()}</EntryDate>
 
@@ -53,8 +52,7 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
           answerText={filteredEveningAnswers}
         />
       </Main>
-
-      <NavBar>
+      <Navigation>
         <StyledNavLink href={`/answers/${previousDate}`}>
           Vorheriger Tag
         </StyledNavLink>
@@ -63,7 +61,7 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
             Nächster Tag
           </StyledNavLink>
         )}
-      </NavBar>
+      </Navigation>
     </>
   );
 }
@@ -103,7 +101,7 @@ const StyledNavLink = styled(Link)`
   font-size: 0.9rem;
 `;
 
-const NavBar = styled.div`
+const Navigation = styled.div`
   display: flex;
   justify-content: space-between;
 `;
