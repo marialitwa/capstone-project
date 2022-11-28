@@ -38,7 +38,7 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
     <>
       <Main>
         <StyledLink href="/">Home</StyledLink>
-        <Heading>Deine Antworten.</Heading>
+        <Heading>Dein Journal.</Heading>
 
         <EntryDate>
           {answerPageDate.toLocaleDateString("de-DE", {
@@ -78,7 +78,7 @@ const Heading = styled.h1`
   text-decoration: underline;
   text-decoration-color: #764ba2;
   text-decoration-thickness: 0.8rem;
-  margin: 2rem;
+  margin: 1.5rem;
   margin-bottom: 2.5rem;
 `;
 

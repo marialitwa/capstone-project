@@ -18,7 +18,7 @@ export default function Home() {
       <CurrentDate>{date}</CurrentDate>
       <StyledLink href="/morning">Frage am Morgen</StyledLink>
       <StyledLink href="/evening">Frage am Abend</StyledLink>
-      <StyledLink href={`/answers/${currentDate}`}>Deine Antworten</StyledLink>
+      <StyledLink href={`/answers/${currentDate}`}>Dein Journal</StyledLink>
     </Main>
   );
 }

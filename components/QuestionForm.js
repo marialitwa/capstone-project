@@ -45,7 +45,9 @@ export default function QuestionForm({ onAddEntry, questionText }) {
 
       {showSnack && (
         <SnackBar
-          text={"Das hat geklappt!"}
+          text={
+            "Das hat geklappt! Dein Eintrag ist erfolgreich gespeichert, du wirst jetzt automatisch zum Journal geleitet."
+          }
           onClose={() => {
             router.push(`/answers/${currentDate}`);
           }}
@@ -63,7 +65,7 @@ const Form = styled.form`
 `;
 
 const StyledSubmitButton = styled.button`
-  margin: 2rem;
+  margin: 1.7rem;
   padding: 12px 18px;
   background-color: #434343;
   color: #fdfcfb;

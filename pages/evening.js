@@ -17,8 +17,8 @@ export default function EveningPage({ onAddEveningAnswer }) {
 
 const Heading = styled.h1`
   text-align: center;
-  margin: 2rem;
-  margin-bottom: 55px;
+  margin: 1.5rem;
+  margin-bottom: 40px;
 `;
 
 const StyledLink = styled(Link)`
