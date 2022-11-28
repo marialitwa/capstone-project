@@ -8,12 +8,17 @@ export default function Home() {
     month: "long",
   });
 
+  const currentDate = new Date()
+    .toLocaleDateString("de-DE")
+    .replaceAll(".", "-");
+
   return (
     <Main>
       <Heading>Das Beste des Tages.</Heading>
       <CurrentDate>{date}</CurrentDate>
       <StyledLink href="/morning">Frage am Morgen</StyledLink>
       <StyledLink href="/evening">Frage am Abend</StyledLink>
+      <StyledLink href={`/answers/${currentDate}`}>Dein Journal</StyledLink>
     </Main>
   );
 }
@@ -34,13 +39,14 @@ const CurrentDate = styled.p`
 `;
 
 const StyledLink = styled(Link)`
-  margin: 1rem;
+  margin: 0.5rem;
   padding: 1.2rem;
   background-color: #434343;
   color: #fdfcfb;
   border: none;
-  border-radius: 3px;
   text-decoration: none;
   width: 200px;
+  height: 60px;
   text-align: center;
+  border-radius: 3px;
 `;

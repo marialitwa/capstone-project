@@ -1,6 +1,17 @@
 import styled from "styled-components";
+import SnackBar from "./SnackBar";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function QuestionForm({ onAddEntry, questionText }) {
+  const router = useRouter();
+
+  const [showSnack, setShowSnack] = useState(false);
+
+  const currentDate = new Date()
+    .toLocaleDateString("de-DE")
+    .replaceAll(".", "-");
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -8,26 +19,42 @@ export default function QuestionForm({ onAddEntry, questionText }) {
 
     const answer = form.elements.answer.value.trim();
 
-    if (answer === "") return;
+    if (answer === "")
+      return alert("Bitte schreibe deine Antwort in das Textfeld");
 
     onAddEntry(answer);
     form.reset();
+    setShowSnack(true);
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <label forHtml="answer">{questionText}</label>
-      <textarea
-        id="answer"
-        name="answer"
-        placeholder="Beginne zu schreiben..."
-        rows="15"
-        cols="30"
-        maxLength="500"
-        required
-      ></textarea>
-      <StyledSubmitButton type="submit">Speichern</StyledSubmitButton>
-    </Form>
+    <div>
+      <Form onSubmit={handleSubmit}>
+        <StyledQuestion forHtml="answer">{questionText}</StyledQuestion>
+        <StyledTextarea
+          id="answer"
+          name="answer"
+          placeholder="Beginne zu schreiben..."
+          rows="20"
+          cols="35"
+          maxLength="1000"
+          required
+        ></StyledTextarea>
+        <StyledSubmitButton type="submit">Speichern</StyledSubmitButton>
+      </Form>
+
+      {showSnack && (
+        <SnackBar
+          text={
+            "Das hat geklappt! Dein Eintrag ist erfolgreich gespeichert, du wirst jetzt automatisch zum Journal geleitet."
+          }
+          onClose={() => {
+            router.push(`/answers/${currentDate}`);
+          }}
+        />
+      )}
+      {!showSnack && <> {/* <h3>Please enter product data</h3> */}</>}
+    </div>
   );
 }
 
@@ -38,10 +65,23 @@ const Form = styled.form`
 `;
 
 const StyledSubmitButton = styled.button`
-  margin: 1rem;
-  padding: 8px 12px;
+  margin: 1.7rem;
+  padding: 12px 18px;
   background-color: #434343;
   color: #fdfcfb;
   border: none;
   border-radius: 3px;
+  letter-spacing: 0.05rem;
+  font-size: 0.9rem;
+`;
+
+const StyledQuestion = styled.label`
+  font-weight: 300;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+`;
+
+const StyledTextarea = styled.textarea`
+  outline: none;
+  border: 1px solid #d1d1d1;
 `;
