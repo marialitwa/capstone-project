@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     [
       {
         id: "93fddb4b-5cf8-40d0-b18a-3cbf96a8301b",
-        text: "Heute Abend das WM-Fußballspiel Deutschland-Spanien zu schauen, auch wenn's grad mies läuft für die Deutsche Mannschaft und die WM in Katar sowieso eine totale Katastrophe ist",
+        text: "Heute Abend das WM-Fußballspiel Deutschland-Spanien zu schauen (auch wenn's beim letzten Spiel nicht so gut lief und die WM in Katar sowieso eine totale Katastrophe ist...)",
         createdDate: "2022-11-27T11:38:27.814Z",
       },
 
@@ -27,7 +27,19 @@ function MyApp({ Component, pageProps }) {
   const [eveningAnswers, setEveningAnswers] = useLocalStorage(
     "eveningAnswers",
 
-    []
+    [
+      {
+        id: "ca2e297a-b2e9-4073-84ad-ce142580fcfe",
+        text: "Austausch mit meinen Team-KollegInnen darüber, wie wir uns in der aktuellen Situation fühlen. Ein auf und ab...",
+        createdDate: "2022-11-25T16:17:26.873Z",
+      },
+
+      {
+        id: "17ff2a87-379a-4b19-958c-15a24cb65ed2",
+        text: "Habe gut und ausreichend geschlafen und konnte tagsüber ausgeruht arbeiten.",
+        createdDate: "2022-11-27T17:40:40.423Z",
+      },
+    ]
   );
 
   function addMorningAnswer(answer) {

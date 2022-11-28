@@ -25,10 +25,6 @@ export default function QuestionForm({ onAddEntry, questionText }) {
     onAddEntry(answer);
     form.reset();
     setShowSnack(true);
-
-    // Do I want to redirect automatically to homepage??
-    // {`/answers/${currentDate}`}
-    // <SnackBar text={"Das hat geklappt!"} onClose={() => router.push("/")} />
   }
 
   return (
@@ -51,8 +47,6 @@ export default function QuestionForm({ onAddEntry, questionText }) {
         <SnackBar
           text={"Das hat geklappt!"}
           onClose={() => {
-            // router.push("`/answers/${currentDate}");
-            // Wie kann ich die Tests löschen???
             router.push(`/answers/${currentDate}`);
           }}
         />

@@ -2,7 +2,7 @@ import Link from "next/link";
 import QuestionForm from "../components/QuestionForm";
 import styled from "styled-components";
 
-export default function EveningPage({ eveningAnswers, onAddEveningAnswer }) {
+export default function EveningPage({ onAddEveningAnswer }) {
   return (
     <>
       <StyledLink href="/">Home</StyledLink>
