@@ -6,7 +6,6 @@ export default function MorningPage({ onAddMorningAnswer }) {
   return (
     <>
       <StyledLink href="/">Home</StyledLink>
-
       <Heading>Guten Morgen.</Heading>
       <QuestionForm
         onAddEntry={onAddMorningAnswer}

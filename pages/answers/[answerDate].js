@@ -39,7 +39,15 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
       <Main>
         <StyledLink href="/">Home</StyledLink>
         <Heading>Deine Antworten.</Heading>
-        <EntryDate>{answerPageDate.toLocaleDateString()}</EntryDate>
+
+        <EntryDate>
+          {answerPageDate.toLocaleDateString("de-DE", {
+            weekday: "long",
+            day: "numeric",
+            month: "numeric",
+            year: "2-digit",
+          })}
+        </EntryDate>
 
         <AnswerCard
           questionText="Worauf freust du dich im Moment?"

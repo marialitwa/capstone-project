@@ -1,6 +1,17 @@
 import styled from "styled-components";
+import SnackBar from "./SnackBar";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function QuestionForm({ onAddEntry, questionText }) {
+  const router = useRouter();
+
+  const [showSnack, setShowSnack] = useState(false);
+
+  const currentDate = new Date()
+    .toLocaleDateString("de-DE")
+    .replaceAll(".", "-");
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -13,22 +24,41 @@ export default function QuestionForm({ onAddEntry, questionText }) {
 
     onAddEntry(answer);
     form.reset();
+    setShowSnack(true);
+
+    // Do I want to redirect automatically to homepage??
+    // {`/answers/${currentDate}`}
+    // <SnackBar text={"Das hat geklappt!"} onClose={() => router.push("/")} />
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <StyledQuestion forHtml="answer">{questionText}</StyledQuestion>
-      <StyledTextarea
-        id="answer"
-        name="answer"
-        placeholder="Beginne zu schreiben..."
-        rows="20"
-        cols="35"
-        maxLength="1000"
-        required
-      ></StyledTextarea>
-      <StyledSubmitButton type="submit">Speichern</StyledSubmitButton>
-    </Form>
+    <div>
+      <Form onSubmit={handleSubmit}>
+        <StyledQuestion forHtml="answer">{questionText}</StyledQuestion>
+        <StyledTextarea
+          id="answer"
+          name="answer"
+          placeholder="Beginne zu schreiben..."
+          rows="20"
+          cols="35"
+          maxLength="1000"
+          required
+        ></StyledTextarea>
+        <StyledSubmitButton type="submit">Speichern</StyledSubmitButton>
+      </Form>
+
+      {showSnack && (
+        <SnackBar
+          text={"Das hat geklappt!"}
+          onClose={() => {
+            // router.push("`/answers/${currentDate}");
+            // Wie kann ich die Tests löschen???
+            router.push(`/answers/${currentDate}`);
+          }}
+        />
+      )}
+      {!showSnack && <> {/* <h3>Please enter product data</h3> */}</>}
+    </div>
   );
 }
 
