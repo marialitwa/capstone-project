@@ -4,6 +4,8 @@ import styled from "styled-components";
 export default function AnswerCard({ questionText, answerText }) {
   return (
     <>
+      {/* Hier Ternary einbauen, wenn kein Eintrag gemacht wurde? Oder in der AnswerPage??*/}
+
       <StyledQuestion>{questionText}</StyledQuestion>
       {answerText.map((morningAnswer) => (
         <StyledAnswer>{morningAnswer.text}</StyledAnswer>

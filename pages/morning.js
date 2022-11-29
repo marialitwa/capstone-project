@@ -17,6 +17,7 @@ export default function MorningPage({ onAddMorningAnswer }) {
 
 const Heading = styled.h1`
   text-align: center;
+  font-weight: 200;
   margin: 1.5rem;
   margin-bottom: 40px;
 `;

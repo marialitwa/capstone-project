@@ -46,7 +46,7 @@ export default function QuestionForm({ onAddEntry, questionText }) {
       {showSnack && (
         <SnackBar
           text={
-            "Das hat geklappt! Dein Eintrag ist erfolgreich gespeichert, du wirst jetzt automatisch zum Journal geleitet."
+            "Das hat geklappt! Dein Eintrag ist erfolgreich gespeichert, du wirst jetzt automatisch zu deinem Journal geleitet."
           }
           onClose={() => {
             router.push(`/answers/${currentDate}`);

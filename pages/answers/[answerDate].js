@@ -39,15 +39,16 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
       <Main>
         <StyledLink href="/">Home</StyledLink>
         <Heading>Dein Journal.</Heading>
-
         <EntryDate>
           {answerPageDate.toLocaleDateString("de-DE", {
             weekday: "long",
             day: "numeric",
             month: "numeric",
-            year: "2-digit",
+            year: "numeric",
           })}
         </EntryDate>
+
+        {/* Hier Ternary einbauen, wenn kein Eintrag gemacht wurde? Oder in der AnswerCard??*/}
 
         <AnswerCard
           questionText="Worauf freust du dich im Moment?"
@@ -102,7 +103,7 @@ const Main = styled.main`
 const StyledNavLink = styled(Link)`
   color: #764ba2;
   margin: 1rem 1.2rem;
-  border-bottom: 3px solid #764ba2;
+  border-bottom: 2px solid #764ba2;
   text-decoration: none;
   font-size: 0.9rem;
 `;
@@ -110,4 +111,8 @@ const StyledNavLink = styled(Link)`
 const Navigation = styled.div`
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;

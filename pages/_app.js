@@ -16,10 +16,11 @@ function MyApp({ Component, pageProps }) {
         text: "Ich freue mich heute darauf meinen Code nach der Review weiter zu verbessern und im Austausch zu sein",
         createdDate: "2022-11-28T08:27:49.978Z",
       },
+
       {
-        id: "b2ae7fb9-5e7d-4eea-a89e-7a9dd8114c44",
-        text: "Meine user story heute fertig zu bekommen.",
-        createdDate: "2022-11-28T10:55:03.347Z",
+        id: "8fbbf6d3-d547-4a76-b3a8-198cc046e523",
+        text: "Ich freu mich darauf heute Abend eine handvoll wirklich sehr leckere schwedische Backwaren im Arket Café dank der ToGoodToGo App abzuholen. Die würde man sonst nämlich wegwerfen und dafür sind sie einfach viel zu lecker.",
+        createdDate: "2022-11-29T09:11:25.632Z",
       },
     ]
   );
