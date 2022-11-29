@@ -65,7 +65,8 @@ const Form = styled.form`
 `;
 
 const StyledSubmitButton = styled.button`
-  margin: 1.7rem;
+  margin: 1rem;
+  margin-top: 1.7rem;
   padding: 12px 18px;
   background-color: #434343;
   color: #fdfcfb;

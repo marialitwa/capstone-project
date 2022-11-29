@@ -48,8 +48,6 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
           })}
         </EntryDate>
 
-        {/* Hier Ternary einbauen, wenn kein Eintrag gemacht wurde? Oder in der AnswerCard??*/}
-
         <AnswerCard
           questionText="Worauf freust du dich im Moment?"
           answerText={filteredMorningAnswers}

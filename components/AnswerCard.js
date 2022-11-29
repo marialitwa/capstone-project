@@ -4,12 +4,14 @@ import styled from "styled-components";
 export default function AnswerCard({ questionText, answerText }) {
   return (
     <>
-      {/* Hier Ternary einbauen, wenn kein Eintrag gemacht wurde? Oder in der AnswerPage??*/}
-
       <StyledQuestion>{questionText}</StyledQuestion>
-      {answerText.map((morningAnswer) => (
-        <StyledAnswer>{morningAnswer.text}</StyledAnswer>
-      ))}
+      {answerText.length === 0 ? (
+        <StyledPlaceholder>Kein Eintrag</StyledPlaceholder>
+      ) : (
+        answerText.map((morningAnswer) => (
+          <StyledAnswer>{morningAnswer.text}</StyledAnswer>
+        ))
+      )}
     </>
   );
 }
@@ -33,4 +35,17 @@ const StyledAnswer = styled.p`
   font-weight: 300;
   line-height: 140%;
   max-width: 100vw;
+`;
+
+const StyledPlaceholder = styled.p`
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  margin-bottom: 60px;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 300;
+  line-height: 140%;
+  max-width: 100vw;
+  font-style: italic;
 `;
