@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
 
       {
         id: "8fbbf6d3-d547-4a76-b3a8-198cc046e523",
-        text: "Ich freu mich darauf heute Abend eine handvoll wirklich sehr leckere schwedische Backwaren im Arket Café dank der ToGoodToGo App abzuholen. Die würde man sonst nämlich wegwerfen und dafür sind sie einfach viel zu lecker.",
+        text: "Ich freu mich darauf heute Abend wirklich sehr leckeres schwedisches Gebäck im Arket Café dank der ToGoodToGo App abzuholen. Das Gebäck würde man sonst nämlich wegwerfen und dafür ist es einfach viel zu lecker.",
         createdDate: "2022-11-29T09:11:25.632Z",
       },
     ]
@@ -40,6 +40,12 @@ function MyApp({ Component, pageProps }) {
         text: "Habe gut und ausreichend geschlafen und konnte tagsüber ausgeruht arbeiten.",
         createdDate: "2022-11-27T17:40:40.423Z",
       },
+
+      {
+        id: "44219f41-a977-43c9-aa81-4dcee98ebe6a",
+        text: "Das was ich die Tage Neues gelernt habe, konnte ich heute im Team weitergeben und habe zum Lösen kleinerer Probleme helfen können. Und genauso andersherum.",
+        createdDate: "2022-11-29T16:22:44.670Z",
+      },
     ]
   );
 
@@ -50,6 +56,7 @@ function MyApp({ Component, pageProps }) {
         id: crypto.randomUUID(),
         text: answer,
         createdDate: new Date(),
+        // isFavorite:
       },
     ]);
   }
@@ -61,6 +68,7 @@ function MyApp({ Component, pageProps }) {
         id: crypto.randomUUID(),
         text: answer,
         createdDate: new Date(),
+        // isFavorite:
       },
     ]);
   }

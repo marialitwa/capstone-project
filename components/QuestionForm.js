@@ -53,7 +53,8 @@ export default function QuestionForm({ onAddEntry, questionText }) {
           }}
         />
       )}
-      {!showSnack && <> {/* <h3>Please enter product data</h3> */}</>}
+      {/* {!showSnack && <> <h3>Please enter product data</h3></>} */}
+      {/* {!showSnack && <> </>} */}
     </div>
   );
 }
