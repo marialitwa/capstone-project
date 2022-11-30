@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps }) {
         id: crypto.randomUUID(),
         text: answer,
         createdDate: new Date(),
-        // isFavorite:
+        isFavorite: false,
       },
     ]);
   }
@@ -68,7 +68,7 @@ function MyApp({ Component, pageProps }) {
         id: crypto.randomUUID(),
         text: answer,
         createdDate: new Date(),
-        // isFavorite:
+        isFavorite: false,
       },
     ]);
   }

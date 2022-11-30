@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function AnswerCard({ questionText, answerText }) {
+export default function AnswerCard({
+  questionText,
+  answerText,
+  toggleFavorite,
+}) {
   return (
     <StyledCard>
       <StyledQuestion>{questionText}</StyledQuestion>
@@ -14,8 +18,7 @@ export default function AnswerCard({ questionText, answerText }) {
         ))
       )}
       <FavIcon
-        type={"button"}
-        variant={"favorite"}
+        // type={"button"}
         onClick={() => {
           toggleFavorite(answerText.id);
         }}

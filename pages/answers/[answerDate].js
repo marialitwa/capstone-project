@@ -3,11 +3,13 @@ import Link from "next/link";
 import styled from "styled-components";
 import AnswerCard from "../../components/AnswerCard";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function AnswersPage({ morningAnswers, eveningAnswers }) {
   const router = useRouter();
-
   const { answerDate } = router.query;
+
+  const [answerText, setAnswerText] = useState(false);
 
   if (!answerDate) return;
   const [day, month, year] = answerDate.split("-");
@@ -34,6 +36,23 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
 
   const today = new Date();
 
+  function toggleFavorite(id) {
+    const answerText = filteredMorningAnswers;
+
+    const newAnswerArray = answerText.map((answerText) => {
+      if (answerText.id === id) {
+        return {
+          ...answerText,
+          isFavorite: !answerText.isFavorite,
+        };
+      } else {
+        return answerText;
+      }
+    });
+
+    setAnswerText(newAnswerArray);
+  }
+
   return (
     <>
       <Main>
@@ -51,10 +70,12 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
         <AnswerCard
           questionText="Worauf freust du dich im Moment?"
           answerText={filteredMorningAnswers}
+          toggleFavorite={toggleFavorite}
         />
         <AnswerCard
           questionText="Was war dein Highlight des Tages?"
           answerText={filteredEveningAnswers}
+          toggleFavorite={toggleFavorite}
         />
       </Main>
       <Navigation>

@@ -1,16 +1,55 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import AnswerCard from "../components/AnswerCard";
 
-export default function FavoritesPage() {
+// export default function FavoriteAnswers() {
+//   const currentDate = new Date()
+//     .toLocaleDateString("de-DE")
+//     .replaceAll(".", "-");
+
+// spots = answerText setSpot=setAnswerText
+
+export default function FavoriteAnswers({ answerText, setAnswerText }) {
   const currentDate = new Date()
     .toLocaleDateString("de-DE")
     .replaceAll(".", "-");
+
+  function toggleFavorite(id) {
+    const newAnswerArray = answerText.map((answerText) => {
+      if (answerText.id === id) {
+        return {
+          ...answerText,
+          isFavorite: !answerText.isFavorite,
+        };
+      } else {
+        return answerText;
+      }
+    });
+
+    setAnswerText(newAnswerArray);
+  }
 
   return (
     <>
       <StyledLink href={`/answers/${currentDate}`}>Journal</StyledLink>
       <Heading>Deine Highlights.</Heading>
+
+      {/* HIER KOMMT DIE FAV-SORTIERTE ANSWERSLIST REIN */}
+      <div>
+        {answerText?.map((answerText) => {
+          if (answerText.isFavorite === true) {
+            return (
+              <AnswerCard
+                answerText={answerText}
+                toggleFavorite={toggleFavorite}
+              />
+            );
+          } else {
+            return null;
+          }
+        })}
+      </div>
     </>
   );
 }
