@@ -3,9 +3,13 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export default function FavoritesPage() {
+  const currentDate = new Date()
+    .toLocaleDateString("de-DE")
+    .replaceAll(".", "-");
+
   return (
     <>
-      <StyledLink href="/">Home</StyledLink>
+      <StyledLink href={`/answers/${currentDate}`}>Journal</StyledLink>
       <Heading>Deine Highlights.</Heading>
     </>
   );
