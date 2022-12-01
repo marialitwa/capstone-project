@@ -10,38 +10,40 @@ import AnswerCard from "../components/AnswerCard";
 
 // spots = answerText setSpot=setAnswerText
 
-export default function FavoriteAnswers({ answerText, setAnswerText }) {
+export default function FavoriteAnswers({
+  morningAnswers,
+  eveningAnswers,
+  toggleFavorite,
+}) {
   const currentDate = new Date()
     .toLocaleDateString("de-DE")
     .replaceAll(".", "-");
 
-  function toggleFavorite(id) {
-    const newAnswerArray = answerText.map((answerText) => {
-      if (answerText.id === id) {
-        return {
-          ...answerText,
-          isFavorite: !answerText.isFavorite,
-        };
-      } else {
-        return answerText;
-      }
-    });
-
-    setAnswerText(newAnswerArray);
-  }
-
   return (
     <>
-      <StyledLink href={`/answers/${currentDate}`}>Journal</StyledLink>
+      {/* <StyledLink href={`/answers/${currentDate}`}>Journal</StyledLink> */}
+
+      <StyledLink href="/">Home</StyledLink>
       <Heading>Deine Highlights.</Heading>
 
-      {/* HIER KOMMT DIE FAV-SORTIERTE ANSWERSLIST REIN */}
       <div>
-        {answerText?.map((answerText) => {
+        {morningAnswers?.map((answerText) => {
           if (answerText.isFavorite === true) {
             return (
               <AnswerCard
-                answerText={answerText}
+                answerText={[answerText]}
+                toggleFavorite={toggleFavorite}
+              />
+            );
+          } else {
+            return null;
+          }
+        })}
+        {eveningAnswers?.map((answerText) => {
+          if (answerText.isFavorite === true) {
+            return (
+              <AnswerCard
+                answerText={[answerText]}
                 toggleFavorite={toggleFavorite}
               />
             );

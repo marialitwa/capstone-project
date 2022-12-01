@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { FaMoon } from "react-icons/fa";
 
 export default function Home() {
   const date = new Date().toLocaleString("de-DE", {

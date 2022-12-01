@@ -5,11 +5,23 @@ import AnswerCard from "../../components/AnswerCard";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function AnswersPage({ morningAnswers, eveningAnswers }) {
+// ---- NAV ICONS -----
+import { VscChevronLeft } from "react-icons/vsc";
+import { VscChevronRight } from "react-icons/vsc";
+// import { BsArrowLeft } from "react-icons/bs";
+// import { CiHome } from "react-icons/ci";
+// import { HiOutlineHome } from "react-icons/hi";
+// import { RiHome2Line } from "react-icons/ri";
+import { TfiHome } from "react-icons/tfi";
+// import { IoIosHeartEmpty } from "react-icons/io";
+
+export default function AnswersPage({
+  morningAnswers,
+  eveningAnswers,
+  toggleFavorite,
+}) {
   const router = useRouter();
   const { answerDate } = router.query;
-
-  const [answerText, setAnswerText] = useState(false);
 
   if (!answerDate) return;
   const [day, month, year] = answerDate.split("-");
@@ -36,27 +48,17 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
 
   const today = new Date();
 
-  function toggleFavorite(id) {
-    const answerText = filteredMorningAnswers;
-
-    const newAnswerArray = answerText.map((answerText) => {
-      if (answerText.id === id) {
-        return {
-          ...answerText,
-          isFavorite: !answerText.isFavorite,
-        };
-      } else {
-        return answerText;
-      }
-    });
-
-    setAnswerText(newAnswerArray);
-  }
-
   return (
     <>
       <Main>
-        <StyledLink href="/">Home</StyledLink>
+        <NavHeader>
+          <Link href="/">
+            <NavIconToHomepage />
+          </Link>
+          {/* <Link href="/favorites">
+            <NavIconToFavoritesPage />
+          </Link> */}
+        </NavHeader>
         <Heading>Dein Journal.</Heading>
         <EntryDate>
           {answerPageDate.toLocaleDateString("de-DE", {
@@ -66,7 +68,6 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
             year: "numeric",
           })}
         </EntryDate>
-
         <AnswerCard
           questionText="Worauf freust du dich im Moment?"
           answerText={filteredMorningAnswers}
@@ -78,16 +79,19 @@ export default function AnswersPage({ morningAnswers, eveningAnswers }) {
           toggleFavorite={toggleFavorite}
         />
       </Main>
-      <Navigation>
+
+      <NavFooter>
         <StyledNavLink href={`/answers/${previousDate}`}>
-          Vorheriger Tag
+          <NavIconPreviousDay />
+          {/* <p>Vorheriger Tag</p> */}
         </StyledNavLink>
         {today.toDateString() !== answerPageDate.toDateString() && (
           <StyledNavLink href={`/answers/${nextDate}`}>
-            Nächster Tag
+            {/* Nächster Tag */}
+            <NavIconNextDay />
           </StyledNavLink>
         )}
-      </Navigation>
+      </NavFooter>
     </>
   );
 }
@@ -109,25 +113,48 @@ const EntryDate = styled.p`
   margin-bottom: 3rem;
 `;
 
-const StyledLink = styled(Link)`
-  display: flex;
-  margin: 10px;
-  color: black;
-`;
-
 const Main = styled.main`
   min-height: calc(100vh - 4rem);
+  margin-top: 3rem;
 `;
 
 const StyledNavLink = styled(Link)`
   color: #764ba2;
-  margin: 1rem 1.2rem;
-  border-bottom: 2px solid #764ba2;
+  margin: 1.2rem 1.5rem;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
+  display: flex;
 `;
 
-const Navigation = styled.div`
+// ----- NAV HEADER ------
+const NavHeader = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+`;
+
+const NavIconToHomepage = styled(TfiHome)`
+  transform: scale(1.3);
+  _margin: 0.3rem 0.5rem;
+  color: #434343;
+  margin: 1rem;
+  margin-top: 0.8rem;
+`;
+
+// const NavIconToFavoritesPage = styled(IoIosHeartEmpty)`
+//   transform: scale(1.5);
+//   _margin: 0.3rem 0.5rem;
+//   color: #434343;
+//   margin: 1rem;
+//   margin-top: 0.8rem;
+// `;
+
+// ----- NAV FOOTER ------
+const NavFooter = styled.div`
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -135,3 +162,23 @@ const Navigation = styled.div`
   left: 0;
   right: 0;
 `;
+
+const NavIconPreviousDay = styled(VscChevronLeft)`
+  transform: scale(3);
+  color: #764ba2;
+`;
+
+const NavIconNextDay = styled(VscChevronRight)`
+  transform: scale(3);
+  color: #764ba2;
+`;
+
+// const StyledLink = styled(Link)`
+//   display: flex;
+//   margin: 10px;
+//   color: #764ba2;
+//   text-decoration: none;
+//   font-size: 1rem;
+//   font-weight: 300;
+//   letter-spacing: 0.02rem;
+// `;
