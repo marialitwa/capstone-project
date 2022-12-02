@@ -3,7 +3,6 @@ import Link from "next/link";
 import styled from "styled-components";
 import AnswerCard from "../../components/AnswerCard";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 // ---- NAV ICONS -----
 import { VscChevronLeft } from "react-icons/vsc";
@@ -13,7 +12,7 @@ import { VscChevronRight } from "react-icons/vsc";
 // import { HiOutlineHome } from "react-icons/hi";
 // import { RiHome2Line } from "react-icons/ri";
 import { TfiHome } from "react-icons/tfi";
-// import { IoIosHeartEmpty } from "react-icons/io";
+import { IoIosHeartEmpty } from "react-icons/io";
 
 export default function AnswersPage({
   morningAnswers,
@@ -55,9 +54,9 @@ export default function AnswersPage({
           <Link href="/">
             <NavIconToHomepage />
           </Link>
-          {/* <Link href="/favorites">
+          <Link href="/favorites">
             <NavIconToFavoritesPage />
-          </Link> */}
+          </Link>
         </NavHeader>
         <Heading>Dein Journal.</Heading>
         <EntryDate>
@@ -96,6 +95,11 @@ export default function AnswersPage({
   );
 }
 
+const Main = styled.main`
+  min-height: calc(100vh - 4rem);
+  margin-top: 3rem;
+`;
+
 const Heading = styled.h1`
   text-align: center;
   font-weight: 200;
@@ -113,19 +117,6 @@ const EntryDate = styled.p`
   margin-bottom: 3rem;
 `;
 
-const Main = styled.main`
-  min-height: calc(100vh - 4rem);
-  margin-top: 3rem;
-`;
-
-const StyledNavLink = styled(Link)`
-  color: #764ba2;
-  margin: 1.2rem 1.5rem;
-  text-decoration: none;
-  font-size: 0.7rem;
-  display: flex;
-`;
-
 // ----- NAV HEADER ------
 const NavHeader = styled.nav`
   display: flex;
@@ -139,19 +130,17 @@ const NavHeader = styled.nav`
 
 const NavIconToHomepage = styled(TfiHome)`
   transform: scale(1.3);
-  _margin: 0.3rem 0.5rem;
   color: #434343;
-  margin: 1rem;
-  margin-top: 0.8rem;
+  margin: 1.2rem;
+  margin-top: 1rem;
 `;
 
-// const NavIconToFavoritesPage = styled(IoIosHeartEmpty)`
-//   transform: scale(1.5);
-//   _margin: 0.3rem 0.5rem;
-//   color: #434343;
-//   margin: 1rem;
-//   margin-top: 0.8rem;
-// `;
+const NavIconToFavoritesPage = styled(IoIosHeartEmpty)`
+  transform: scale(1.7);
+  color: #434343;
+  margin: 1.2rem;
+  margin-top: 1rem;
+`;
 
 // ----- NAV FOOTER ------
 const NavFooter = styled.div`
@@ -171,6 +160,14 @@ const NavIconPreviousDay = styled(VscChevronLeft)`
 const NavIconNextDay = styled(VscChevronRight)`
   transform: scale(3);
   color: #764ba2;
+`;
+
+const StyledNavLink = styled(Link)`
+  color: #764ba2;
+  margin: 1.2rem 1.5rem;
+  text-decoration: none;
+  font-size: 0.7rem;
+  display: flex;
 `;
 
 // const StyledLink = styled(Link)`

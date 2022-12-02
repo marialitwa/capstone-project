@@ -1,6 +1,7 @@
 import GlobalStyles from "../components/GlobalStyles";
 import { useLocalStorage } from "../helpers/hooks";
 
+// den LocalStorgae Hook am besten nur mit Arrays oder Objects benutzen. Kann bei Strings Fehler werfen.
 function MyApp({ Component, pageProps }) {
   const [morningAnswers, setMorningAnswers] = useLocalStorage(
     "morningAnswers",
@@ -115,6 +116,7 @@ function MyApp({ Component, pageProps }) {
         eveningAnswers={eveningAnswers}
         onAddEveningAnswer={addEveningAnswer}
         toggleFavorite={toggleFavorite}
+        // createdDate={morningAnswers.createdDate}
       />
     </>
   );

@@ -56,7 +56,6 @@ export default function AnswerCard({
 const StyledQuestion = styled.p`
   display: flex;
   justify-content: center;
-
   margin-bottom: -10px;
   font-size: 0.8rem;
   color: #757474;

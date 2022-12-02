@@ -2,38 +2,53 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import AnswerCard from "../components/AnswerCard";
+import { TfiHome } from "react-icons/tfi";
 
 // export default function FavoriteAnswers() {
 //   const currentDate = new Date()
 //     .toLocaleDateString("de-DE")
 //     .replaceAll(".", "-");
 
-// spots = answerText setSpot=setAnswerText
-
 export default function FavoriteAnswers({
   morningAnswers,
   eveningAnswers,
   toggleFavorite,
 }) {
-  const currentDate = new Date()
-    .toLocaleDateString("de-DE")
-    .replaceAll(".", "-");
-
   return (
     <>
       {/* <StyledLink href={`/answers/${currentDate}`}>Journal</StyledLink> */}
+      {/* <StyledLink href="/">Home</StyledLink> */}
+      {/* <Link href="/">
+        <NavIconToHomepage />
+      </Link> */}
 
-      <StyledLink href="/">Home</StyledLink>
+      <NavHeader>
+        <Link href="/">
+          <NavIconToHomepage />
+        </Link>
+        {/* <Link href="/answers">
+          <NavIconToAnswersPage />
+        </Link> */}
+      </NavHeader>
       <Heading>Deine Highlights.</Heading>
 
       <div>
         {morningAnswers?.map((answerText) => {
           if (answerText.isFavorite === true) {
             return (
-              <AnswerCard
-                answerText={[answerText]}
-                toggleFavorite={toggleFavorite}
-              />
+              <div>
+                {/* HIER FUNKTIONIERT ES: */}
+                <EntryDate>{answerText.createdDate}</EntryDate>
+
+                {/* SO FUNKTIONIERT ES NICHT: */}
+                {/* <p>{morningAnswers.createdDate}</p> */}
+
+                <AnswerCard
+                  // createdDate={morningAnswers.createdDate}
+                  answerText={[answerText]}
+                  toggleFavorite={toggleFavorite}
+                />
+              </div>
             );
           } else {
             return null;
@@ -42,10 +57,21 @@ export default function FavoriteAnswers({
         {eveningAnswers?.map((answerText) => {
           if (answerText.isFavorite === true) {
             return (
-              <AnswerCard
-                answerText={[answerText]}
-                toggleFavorite={toggleFavorite}
-              />
+              <div>
+                {/* SO FUNKTIONIERT ES NICHT: */}
+                {/* <p>
+                  {answerText.createdDate.toLocaleDateString("de-DE", {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "numeric",
+                    year: "numeric",
+                  })}
+                </p> */}
+                <AnswerCard
+                  answerText={[answerText]}
+                  toggleFavorite={toggleFavorite}
+                />
+              </div>
             );
           } else {
             return null;
@@ -62,12 +88,39 @@ const Heading = styled.h1`
   text-decoration: underline;
   text-decoration-color: #764ba2;
   text-decoration-thickness: 0.8rem;
-  margin: 1.5rem;
   margin-bottom: 2.5rem;
+  margin-top: 3rem;
 `;
 
-const StyledLink = styled(Link)`
+// const StyledLink = styled(Link)`
+//   display: flex;
+//   margin: 10px;
+//   color: black;
+// `;
+
+// ----- NAV HEADER ------
+const NavHeader = styled.nav`
   display: flex;
-  margin: 10px;
-  color: black;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+`;
+
+const NavIconToHomepage = styled(TfiHome)`
+  transform: scale(1.3);
+  _margin: 0.3rem 0.5rem;
+  color: #434343;
+  margin: 1rem;
+  margin-top: 0.8rem;
+`;
+
+const EntryDate = styled.p`
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-bottom: -1.5rem;
+  color: #757474;
 `;
