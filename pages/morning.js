@@ -8,7 +8,6 @@ export default function MorningPage({ onAddMorningAnswer }) {
     <>
       <StyledLink href="/">
         <NavIconToHomepage />
-        {/* Home */}
       </StyledLink>
       <Heading>Guten Morgen.</Heading>
       <QuestionForm

@@ -7,10 +7,6 @@ import { useRouter } from "next/router";
 // ---- NAV ICONS -----
 import { VscChevronLeft } from "react-icons/vsc";
 import { VscChevronRight } from "react-icons/vsc";
-// import { BsArrowLeft } from "react-icons/bs";
-// import { CiHome } from "react-icons/ci";
-// import { HiOutlineHome } from "react-icons/hi";
-// import { RiHome2Line } from "react-icons/ri";
 import { TfiHome } from "react-icons/tfi";
 import { IoIosHeartEmpty } from "react-icons/io";
 
@@ -82,11 +78,9 @@ export default function AnswersPage({
       <NavFooter>
         <StyledNavLink href={`/answers/${previousDate}`}>
           <NavIconPreviousDay />
-          {/* <p>Vorheriger Tag</p> */}
         </StyledNavLink>
         {today.toDateString() !== answerPageDate.toDateString() && (
           <StyledNavLink href={`/answers/${nextDate}`}>
-            {/* Nächster Tag */}
             <NavIconNextDay />
           </StyledNavLink>
         )}
@@ -169,13 +163,3 @@ const StyledNavLink = styled(Link)`
   font-size: 0.7rem;
   display: flex;
 `;
-
-// const StyledLink = styled(Link)`
-//   display: flex;
-//   margin: 10px;
-//   color: #764ba2;
-//   text-decoration: none;
-//   font-size: 1rem;
-//   font-weight: 300;
-//   letter-spacing: 0.02rem;
-// `;
