@@ -8,6 +8,7 @@ export default function FavoriteAnswers({
   morningAnswers,
   eveningAnswers,
   toggleFavorite,
+  questionText,
 }) {
   const stringToLocaleDate = (dateString) =>
     new Date(dateString).toLocaleDateString("de-DE", {
@@ -33,8 +34,10 @@ export default function FavoriteAnswers({
             answerText.isFavorite && (
               <div>
                 <StyledEntryDate>
-                  {stringToLocaleDate(answerText.createdDate)}.
+                  {stringToLocaleDate(answerText.createdDate)}
                 </StyledEntryDate>
+                <StyledQuestion>Morgens</StyledQuestion>
+
                 <AnswerCard
                   answerText={[answerText]}
                   toggleFavorite={toggleFavorite}
@@ -48,8 +51,10 @@ export default function FavoriteAnswers({
             answerText.isFavorite && (
               <div>
                 <StyledEntryDate>
-                  {stringToLocaleDate(answerText.createdDate)}.
+                  {stringToLocaleDate(answerText.createdDate)}
                 </StyledEntryDate>
+                <StyledQuestion>Abends</StyledQuestion>
+
                 <AnswerCard
                   answerText={[answerText]}
                   toggleFavorite={toggleFavorite}
@@ -72,6 +77,22 @@ const Heading = styled.h1`
   margin-top: 3rem;
 `;
 
+const StyledEntryDate = styled.p`
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-bottom: -0.7rem;
+  color: #757474;
+`;
+const StyledQuestion = styled.p`
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1rem;
+  font-size: 0.8rem;
+  color: #757474;
+  font-weight: 300;
+`;
+
 // ----- NAV HEADER ------
 const NavHeader = styled.nav`
   display: flex;
@@ -88,12 +109,4 @@ const NavIconToHomepage = styled(TfiHome)`
   color: #434343;
   margin: 1rem;
   margin-top: 0.8rem;
-`;
-
-const StyledEntryDate = styled.p`
-  text-align: center;
-  font-size: 0.8rem;
-  font-weight: 300;
-  margin-bottom: -1.5rem;
-  color: #757474;
 `;
