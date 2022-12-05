@@ -83,7 +83,8 @@ const StyledQuestion = styled.label`
 
 const StyledTextarea = styled.textarea`
   outline: none;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #434343;
   border-radius: 6px;
   padding: 8px;
+  background: none;
 `;

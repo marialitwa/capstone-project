@@ -8,7 +8,6 @@ export default function FavoriteAnswers({
   morningAnswers,
   eveningAnswers,
   toggleFavorite,
-  questionText,
 }) {
   const stringToLocaleDate = (dateString) =>
     new Date(dateString).toLocaleDateString("de-DE", {
