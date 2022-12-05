@@ -18,9 +18,8 @@ export default function SnackBar({ text, onClose }) {
 
 const StyledSnackbar = styled.p`
   text-align: center;
-  font-weight: 800;
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 400;
   background-color: rgba(118, 75, 162, 0.5);
   border-radius: 5px;
   color: white;

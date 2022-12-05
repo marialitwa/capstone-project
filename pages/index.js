@@ -19,6 +19,7 @@ export default function Home() {
       <StyledLink href="/morning">Frage am Morgen</StyledLink>
       <StyledLink href="/evening">Frage am Abend</StyledLink>
       <StyledLink href={`/answers/${currentDate}`}>Dein Journal</StyledLink>
+      <StyledLink href="/favorites">Deine Highlights</StyledLink>
     </Main>
   );
 }
@@ -27,6 +28,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 `;
 
 const Heading = styled.h1`
@@ -35,7 +37,7 @@ const Heading = styled.h1`
 `;
 
 const CurrentDate = styled.p`
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 `;
 
 const StyledLink = styled(Link)`

@@ -46,14 +46,13 @@ export default function QuestionForm({ onAddEntry, questionText }) {
       {showSnack && (
         <SnackBar
           text={
-            "Das hat geklappt! Dein Eintrag ist erfolgreich gespeichert, du wirst jetzt automatisch zum Journal geleitet."
+            "Das hat geklappt! Dein Eintrag ist gespeichert. Du wirst jetzt automatisch zu deinem Journal geleitet."
           }
           onClose={() => {
             router.push(`/answers/${currentDate}`);
           }}
         />
       )}
-      {!showSnack && <> {/* <h3>Please enter product data</h3> */}</>}
     </div>
   );
 }
@@ -65,7 +64,8 @@ const Form = styled.form`
 `;
 
 const StyledSubmitButton = styled.button`
-  margin: 1.7rem;
+  margin: 1rem;
+  margin-top: 1.7rem;
   padding: 12px 18px;
   background-color: #434343;
   color: #fdfcfb;
@@ -84,4 +84,6 @@ const StyledQuestion = styled.label`
 const StyledTextarea = styled.textarea`
   outline: none;
   border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  padding: 8px;
 `;
