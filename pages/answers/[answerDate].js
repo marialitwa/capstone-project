@@ -90,6 +90,7 @@ export default function AnswersPage({
 }
 
 const Main = styled.main`
+  height: 100vh;
   min-height: calc(100vh - 4rem);
   margin-top: 3rem;
 `;

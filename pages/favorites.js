@@ -26,41 +26,37 @@ export default function FavoriteAnswers({
       </NavHeader>
       <Heading>Deine Highlights.</Heading>
 
+      {/* FAVORITE SELECTION MORNING ANSWERS */}
       <div>
-        {morningAnswers?.map((answerText) => {
-          if (answerText.isFavorite === true) {
-            return (
+        {morningAnswers?.map(
+          (answerText) =>
+            answerText.isFavorite && (
               <div>
                 <StyledEntryDate>
-                  {stringToLocaleDate(answerText.createdDate)}
+                  {stringToLocaleDate(answerText.createdDate)}.
                 </StyledEntryDate>
                 <AnswerCard
                   answerText={[answerText]}
                   toggleFavorite={toggleFavorite}
                 />
               </div>
-            );
-          } else {
-            return null;
-          }
-        })}
-        {eveningAnswers?.map((answerText) => {
-          if (answerText.isFavorite === true) {
-            return (
+            )
+        )}
+        {/* FAVORITE SELECTION EVENING ANSWERS */}
+        {eveningAnswers?.map(
+          (answerText) =>
+            answerText.isFavorite && (
               <div>
                 <StyledEntryDate>
-                  {stringToLocaleDate(answerText.createdDate)}
+                  {stringToLocaleDate(answerText.createdDate)}.
                 </StyledEntryDate>
                 <AnswerCard
                   answerText={[answerText]}
                   toggleFavorite={toggleFavorite}
                 />
               </div>
-            );
-          } else {
-            return null;
-          }
-        })}
+            )
+        )}
       </div>
     </>
   );

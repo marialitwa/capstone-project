@@ -17,7 +17,8 @@ export default function AnswerCard({
           <>
             <StyledAnswer>{morningAnswer.text}</StyledAnswer>
             <FavIcon
-              type={"button"}
+              aria-label="bookmark button"
+              type="button"
               onClick={() => {
                 toggleFavorite(morningAnswer.id);
               }}
@@ -87,7 +88,7 @@ const StyledPlaceholder = styled.p`
   font-style: italic;
 `;
 
-const StyledCard = styled.p`
+const StyledCard = styled.article`
   _border: 1px solid hotpink;
 `;
 
