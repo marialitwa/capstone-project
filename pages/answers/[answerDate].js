@@ -7,7 +7,9 @@ import { useRouter } from "next/router";
 // ---- NAV ICONS -----
 import { VscChevronLeft } from "react-icons/vsc";
 import { VscChevronRight } from "react-icons/vsc";
-import { TfiHome } from "react-icons/tfi";
+// import { TfiHome } from "react-icons/tfi";
+import { BsArrowLeft } from "react-icons/bs";
+
 import { IoIosHeartEmpty } from "react-icons/io";
 
 export default function AnswersPage({
@@ -59,7 +61,7 @@ export default function AnswersPage({
           {answerPageDate.toLocaleDateString("de-DE", {
             weekday: "long",
             day: "numeric",
-            month: "numeric",
+            month: "long",
             year: "numeric",
           })}
         </EntryDate>
@@ -79,6 +81,7 @@ export default function AnswersPage({
         <StyledNavLink href={`/answers/${previousDate}`}>
           <NavIconPreviousDay />
         </StyledNavLink>
+
         {today.toDateString() !== answerPageDate.toDateString() && (
           <StyledNavLink href={`/answers/${nextDate}`}>
             <NavIconNextDay />
@@ -90,26 +93,10 @@ export default function AnswersPage({
 }
 
 const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
-  margin-top: 3rem;
-  padding-bottom: 4rem;
-`;
-
-const Heading = styled.h1`
-  text-align: center;
-  font-weight: 200;
-  text-decoration: underline;
-  text-decoration-color: #764ba2;
-  text-decoration-thickness: 0.8rem;
-  margin: 1.5rem;
-  margin-bottom: 2.5rem;
-`;
-
-const EntryDate = styled.p`
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 300;
-  margin-bottom: 3rem;
 `;
 
 // ----- NAV HEADER ------
@@ -123,22 +110,43 @@ const NavHeader = styled.nav`
   right: 0;
 `;
 
-const NavIconToHomepage = styled(TfiHome)`
-  transform: scale(1.3);
+const NavIconToHomepage = styled(BsArrowLeft)`
   color: var(--darkgrey);
   margin: 1.2rem;
   margin-top: 1rem;
+  transform: scale(1.5);
+  color: var(--darkgrey);
 `;
 
 const NavIconToFavoritesPage = styled(IoIosHeartEmpty)`
-  transform: scale(1.7);
+  transform: scale(1.6);
   color: var(--darkgrey);
   margin: 1.2rem;
   margin-top: 1rem;
 `;
 
+// ----- HEADING + DATE ------
+const Heading = styled.h1`
+  text-align: center;
+  font-weight: 200;
+  margin: 3.1rem;
+  margin-bottom: 1rem;
+  font-size: var(--heading-fontsize);
+  color: var(--darkgrey);
+  /* text-decoration: underline;
+  text-decoration-color: #764ba2;
+  text-decoration-thickness: 0.8rem; */
+`;
+
+const EntryDate = styled.p`
+  text-align: center;
+  font-size: var(--date-fontsize);
+  font-weight: var(--date-fontweight);
+  margin-bottom: 2rem;
+`;
+
 // ----- NAV FOOTER ------
-const NavFooter = styled.div`
+const NavFooter = styled.nav`
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -148,18 +156,18 @@ const NavFooter = styled.div`
 `;
 
 const NavIconPreviousDay = styled(VscChevronLeft)`
-  transform: scale(3);
+  transform: scale(2.9);
   color: var(--darkgrey);
 `;
 
 const NavIconNextDay = styled(VscChevronRight)`
-  transform: scale(3);
+  transform: scale(2.9);
   color: var(--darkgrey);
 `;
 
 const StyledNavLink = styled(Link)`
-  color: #764ba2;
-  margin: 1.2rem 1.5rem;
+  color: var(--darkgrey);
+  margin: 1.4rem 1.2rem;
   text-decoration: none;
   font-size: 0.7rem;
   display: flex;

@@ -64,31 +64,27 @@ const Form = styled.form`
 `;
 
 const StyledQuestion = styled.label`
-  font-weight: 200;
-  font-size: 0.95rem;
+  font-weight: var(--body-fontweight);
+  font-size: var(--body-fontsize);
   margin-bottom: 12px;
-  letter-spacing: 0.02rem;
 `;
 
 const StyledTextarea = styled.textarea`
   outline: none;
   padding: 15px;
   background: rgba(255, 255, 255, 0.2);
+  _background: none;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  _background: none;
-  _border: 1px solid #7f7f87;
-  _border-radius: 6px;
   font-family: Quicksand;
-  font-weight: 200;
-  font-size: 0.95rem;
+  font-weight: var(--body-fontweight);
+  font-size: var(--body-fontsize);
   &::placeholder {
-    _color: var(--darkgrey);
     color: var(--grey);
-    font-size: 0.8rem;
+    font-size: var(--body-fontsize-small);
     letter-spacing: 0.01rem;
     _text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
   }
@@ -111,10 +107,10 @@ const StyledSubmitButton = styled.button`
   letter-spacing: 0.05rem;
   font-size: 0.9rem;
   text-transform: lowercase;
-  box-shadow: 3px 3px 1px hotpink;
+  box-shadow: 3px 3px 1px #ff3870;
   &:hover {
     cursor: pointer;
-    background-color: hotpink;
+    background-color: #ff3870;
     box-shadow: 3px 3px 1px #4f4f4f;
   }
 `;

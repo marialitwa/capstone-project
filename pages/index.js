@@ -34,12 +34,13 @@ const Main = styled.main`
 const Heading = styled.h1`
   text-align: center;
   margin: 50px 30px 15px;
-  font-size: 1.9rem;
+  font-size: var(--heading-fontsize);
 `;
 
 const CurrentDate = styled.p`
-  margin-bottom: 55px;
-  font-size: 0.9rem;
+  margin-bottom: 50px;
+  font-size: var(--date-fontsize);
+  font-weight: var(--date-fontweight);
 `;
 
 const StyledLink = styled(Link)`

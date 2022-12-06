@@ -36,7 +36,6 @@ const Heading = styled.h1`
 const StyledLink = styled(Link)`
   display: flex;
   margin: 10px;
-  color: black;
 `;
 const NavIconToHomepage = styled(BsArrowLeft)`
   transform: scale(1.5);

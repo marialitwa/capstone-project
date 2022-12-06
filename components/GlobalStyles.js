@@ -50,7 +50,14 @@ const GlobalStyles = createGlobalStyle`
         --darkgrey: #4f4f4f;
         --grey: #797979;
         --heading-fontsize: 1.9rem;
+        --date-fontsize: 0.9rem;
+        --date-fontweight: 200;
+        --body-fontsize: 0.95rem;
+        --body-fontweight: 200;
+        --body-fontsize-small: 0.8rem;
 
+        // Usage: button shadow + fav icon
+        --pink: #ff3870;
 
     }
 `;
