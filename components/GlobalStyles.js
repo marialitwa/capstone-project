@@ -28,7 +28,8 @@ const GlobalStyles = createGlobalStyle`
         background: linear-gradient(90deg, #faece0, #fae6e0, #f5e0ce, #fbccc0);
         background-size: 400%;
         animation: gradient-bg 20s ease infinite ;
-        color: #434343;
+        color: var(--primary-darkgrey)
+        /* color: #434343; */
     }
 
     @keyframes gradient-bg {
@@ -42,6 +43,12 @@ const GlobalStyles = createGlobalStyle`
     100% {
         background-position: 0% 50%;
     }
+    }
+
+    :root {
+        /* --primary-darkgrey: #434343; */
+        --primary-darkgrey: #4f4f4f;
+
     }
 `;
 

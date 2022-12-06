@@ -54,6 +54,10 @@ export default function AnswerCard({
   );
 }
 
+const StyledCard = styled.article`
+  _border: 1px solid hotpink;
+`;
+
 const StyledQuestion = styled.p`
   display: flex;
   justify-content: center;
@@ -88,14 +92,11 @@ const StyledPlaceholder = styled.p`
   font-style: italic;
 `;
 
-const StyledCard = styled.article`
-  _border: 1px solid hotpink;
-`;
-
 const FavIcon = styled.button`
   display: flex;
   justify-content: center;
   border: none;
   margin: auto;
   margin-bottom: 4rem;
+  background: none;
 `;
