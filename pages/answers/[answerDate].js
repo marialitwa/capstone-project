@@ -125,14 +125,14 @@ const NavHeader = styled.nav`
 
 const NavIconToHomepage = styled(TfiHome)`
   transform: scale(1.3);
-  color: var(--primary-darkgrey);
+  color: var(--darkgrey);
   margin: 1.2rem;
   margin-top: 1rem;
 `;
 
 const NavIconToFavoritesPage = styled(IoIosHeartEmpty)`
   transform: scale(1.7);
-  color: var(--primary-darkgrey);
+  color: var(--darkgrey);
   margin: 1.2rem;
   margin-top: 1rem;
 `;
@@ -149,12 +149,12 @@ const NavFooter = styled.div`
 
 const NavIconPreviousDay = styled(VscChevronLeft)`
   transform: scale(3);
-  color: var(--primary-darkgrey);
+  color: var(--darkgrey);
 `;
 
 const NavIconNextDay = styled(VscChevronRight)`
   transform: scale(3);
-  color: var(--primary-darkgrey);
+  color: var(--darkgrey);
 `;
 
 const StyledNavLink = styled(Link)`

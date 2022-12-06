@@ -16,8 +16,8 @@ export default function Home() {
     <Main>
       <Heading>Das Beste des Tages.</Heading>
       <CurrentDate>{date}</CurrentDate>
-      <StyledLink href="/morning">Frage am Morgen</StyledLink>
-      <StyledLink href="/evening">Frage am Abend</StyledLink>
+      <StyledLink href="/morning">Gedanken am Morgen</StyledLink>
+      <StyledLink href="/evening">Gedanken am Abend</StyledLink>
       <StyledLink href={`/answers/${currentDate}`}>Dein Journal</StyledLink>
       <StyledLink href="/favorites">Deine Highlights</StyledLink>
     </Main>
@@ -39,19 +39,21 @@ const Heading = styled.h1`
 
 const CurrentDate = styled.p`
   margin-bottom: 55px;
+  font-size: 0.9rem;
 `;
 
 const StyledLink = styled(Link)`
   margin: 0.5rem;
   padding: 2rem;
-  _background-color: #434343;
-  _color: #fdfcfb;
-  color: var(--primary-darkgrey);
+  color: var(--darkgrey);
   border: none;
   text-decoration: none;
   width: 240px;
   height: 90px;
   text-align: center;
+  font-family: Quicksand;
+  font-weight: 300;
+  font-size: 1rem;
 
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.2);

@@ -1,16 +1,20 @@
 import Link from "next/link";
 import QuestionForm from "../components/QuestionForm";
 import styled from "styled-components";
-import { TfiHome } from "react-icons/tfi";
+// import { TfiHome } from "react-icons/tfi";
+import { BsArrowLeft } from "react-icons/bs";
 
 export default function EveningPage({ onAddEveningAnswer }) {
   return (
     <>
-      <NavHeader>
+      {/* <NavHeader>
         <Link href="/">
           <NavIconToHomepage />
         </Link>
-      </NavHeader>
+      </NavHeader> */}
+      <StyledLink href="/">
+        <NavIconToHomepage />
+      </StyledLink>
       <Heading>Guten Abend.</Heading>
       <QuestionForm
         onAddEntry={onAddEveningAnswer}
@@ -22,25 +26,32 @@ export default function EveningPage({ onAddEveningAnswer }) {
 
 const Heading = styled.h1`
   text-align: center;
-  margin: 2rem;
-  margin-top: 3rem;
+  font-weight: 200;
+  margin: 0.9rem;
+  margin-bottom: 45px;
+  font-size: var(--heading-fontsize);
+  color: var(--darkgrey);
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  margin: 10px;
+  color: black;
+`;
+const NavIconToHomepage = styled(BsArrowLeft)`
+  transform: scale(1.5);
+  margin: 0.3rem 0.5rem;
+  color: var(--darkgrey);
 `;
 
 // ----- NAV HEADER ------
 
-const NavHeader = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-`;
-
-const NavIconToHomepage = styled(TfiHome)`
-  transform: scale(1.3);
-  color: #434343;
-  margin: 1rem;
-  margin-top: 0.8rem;
-`;
+// const NavHeader = styled.nav`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+// `;

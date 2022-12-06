@@ -19,7 +19,8 @@ const GlobalStyles = createGlobalStyle`
 
     * {
         box-sizing: border-box;
-        _background-color: #F5F4F4;     
+        _background-color: #F5F4F4; 
+    
     }
 
     body {
@@ -28,10 +29,9 @@ const GlobalStyles = createGlobalStyle`
         background: linear-gradient(90deg, #faece0, #fae6e0, #f5e0ce, #fbccc0);
         background-size: 400%;
         animation: gradient-bg 20s ease infinite ;
-        color: var(--primary-darkgrey)
+        color: var(--darkgrey)
         /* color: #434343; */
     }
-
     @keyframes gradient-bg {
     0% {
         background-position: 0% 50%;
@@ -46,8 +46,11 @@ const GlobalStyles = createGlobalStyle`
     }
 
     :root {
-        /* --primary-darkgrey: #434343; */
-        --primary-darkgrey: #4f4f4f;
+        /* --darkgrey: #434343; */
+        --darkgrey: #4f4f4f;
+        --grey: #797979;
+        --heading-fontsize: 1.9rem;
+
 
     }
 `;

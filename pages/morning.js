@@ -21,17 +21,20 @@ export default function MorningPage({ onAddMorningAnswer }) {
 const Heading = styled.h1`
   text-align: center;
   font-weight: 200;
-  margin: 1.5rem;
-  margin-bottom: 40px;
+  margin: 0.9rem;
+  margin-bottom: 45px;
+  font-size: var(--heading-fontsize);
+  color: var(--darkgrey);
 `;
 
 const StyledLink = styled(Link)`
   display: flex;
   margin: 10px;
-  color: black;
+  color: hotpink;
 `;
 
 const NavIconToHomepage = styled(BsArrowLeft)`
   transform: scale(1.5);
   margin: 0.3rem 0.5rem;
+  color: var(--darkgrey);
 `;

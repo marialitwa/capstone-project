@@ -34,9 +34,9 @@ export default function QuestionForm({ onAddEntry, questionText }) {
         <StyledTextarea
           id="answer"
           name="answer"
-          placeholder="Beginne zu schreiben..."
-          rows="20"
-          cols="35"
+          placeholder="Nimm dir Zeit zu reflektieren und schreibe hier deine Gedanken auf ..."
+          rows="16"
+          cols="34"
           maxLength="1000"
           required
         ></StyledTextarea>
@@ -63,28 +63,58 @@ const Form = styled.form`
   align-items: center;
 `;
 
-const StyledSubmitButton = styled.button`
-  margin: 1rem;
-  margin-top: 1.7rem;
-  padding: 12px 18px;
-  background-color: #434343;
-  color: #fdfcfb;
-  border: none;
-  border-radius: 3px;
-  letter-spacing: 0.05rem;
-  font-size: 0.9rem;
-`;
-
 const StyledQuestion = styled.label`
-  font-weight: 300;
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
+  font-weight: 200;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  letter-spacing: 0.02rem;
 `;
 
 const StyledTextarea = styled.textarea`
   outline: none;
-  border: 1px solid #434343;
-  border-radius: 6px;
-  padding: 8px;
-  background: none;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  _background: none;
+  _border: 1px solid #7f7f87;
+  _border-radius: 6px;
+  font-family: Quicksand;
+  font-weight: 200;
+  font-size: 0.95rem;
+  &::placeholder {
+    _color: var(--darkgrey);
+    color: var(--grey);
+    font-size: 0.8rem;
+    letter-spacing: 0.01rem;
+    _text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+// Gradient BG Colors: #faece0, #fae6e0, #f5e0ce, #fbccc0
+const StyledSubmitButton = styled.button`
+  margin: 1rem;
+  margin-top: 1.5rem;
+  padding: 15px 40px;
+  _background-color: #434343;
+  background-color: var(--darkgrey);
+  color: #fbccc0;
+  font-weight: 100;
+  font-family: Quicksand;
+  _color: #fdfcfb;
+  _color: var(--darkgrey);
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.05rem;
+  font-size: 0.9rem;
+  text-transform: lowercase;
+  box-shadow: 3px 3px 1px hotpink;
+  &:hover {
+    cursor: pointer;
+    background-color: hotpink;
+    box-shadow: 3px 3px 1px #4f4f4f;
+  }
 `;
