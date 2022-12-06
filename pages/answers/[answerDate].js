@@ -9,7 +9,6 @@ import { VscChevronLeft } from "react-icons/vsc";
 import { VscChevronRight } from "react-icons/vsc";
 // import { TfiHome } from "react-icons/tfi";
 import { BsArrowLeft } from "react-icons/bs";
-
 import { IoIosHeartEmpty } from "react-icons/io";
 
 export default function AnswersPage({
@@ -121,8 +120,7 @@ const NavIconToHomepage = styled(BsArrowLeft)`
 const NavIconToFavoritesPage = styled(IoIosHeartEmpty)`
   transform: scale(1.6);
   color: var(--darkgrey);
-  margin: 1.2rem;
-  margin-top: 1rem;
+  margin: 1rem 1.3rem;
 `;
 
 // ----- HEADING + DATE ------

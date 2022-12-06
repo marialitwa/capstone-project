@@ -25,9 +25,10 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         /* #fbccc0, #f5d3ce */
+        //
         /* background: linear-gradient(120deg, rgba(255,236,210,1) 0%, rgba(252,182,159,1) 100%); */
         background: linear-gradient(90deg, #faece0, #fae6e0, #f5e0ce, #fbccc0);
-        background-size: 400%;
+        background-size: 300%;
         animation: gradient-bg 20s ease infinite ;
         color: var(--darkgrey)
         /* color: #434343; */

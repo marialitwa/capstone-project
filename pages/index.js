@@ -16,8 +16,10 @@ export default function Home() {
     <Main>
       <Heading>Das Beste des Tages.</Heading>
       <CurrentDate>{date}</CurrentDate>
+
       <StyledLink href="/morning">Gedanken am Morgen</StyledLink>
       <StyledLink href="/evening">Gedanken am Abend</StyledLink>
+
       <StyledLink href={`/answers/${currentDate}`}>Dein Journal</StyledLink>
       <StyledLink href="/favorites">Deine Highlights</StyledLink>
     </Main>

@@ -18,10 +18,19 @@ export default function SnackBar({ text, onClose }) {
 
 const StyledSnackbar = styled.p`
   text-align: center;
-  font-size: 0.9rem;
-  font-weight: 400;
-  background-color: rgba(118, 75, 162, 0.5);
-  border-radius: 5px;
-  color: white;
-  padding: 10px 20px;
+  font-size: var(--body-fontsize-small);
+  _font-size: 0.8rem;
+  font-weight: 300;
+  background-color: rgba(0, 0, 8, 0.66);
+  _background-color: var(--pink);
+  _background-color: rgba(250, 120, 100, 0.5);
+  border-radius: 6px;
+  _color: #fbccc0;
+  _color: #faece0;
+  color: #fae6e0;
+  padding: 30px 50px;
+  width: 70vw;
+  height: 20vh;
+  letter-spacing: 0.02rem;
+  line-height: 1.1rem;
 `;
