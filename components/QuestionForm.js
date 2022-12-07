@@ -134,7 +134,7 @@ const StyledSubmitButton = styled.button`
   _height: 2rem;
   width: 10rem;
   margin-bottom: 0.5rem;
-  margin-top: 1.2rem;
+  margin-top: 2rem;
   _margin-top: 4rem;
   padding: 15px 40px;
   font-size: 0.9rem;
