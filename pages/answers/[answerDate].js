@@ -110,16 +110,16 @@ const NavHeader = styled.nav`
 `;
 
 const NavIconToHomepage = styled(BsArrowLeft)`
-  color: var(--darkgrey);
+  color: var(--text-primary);
   margin: 1.2rem;
   margin-top: 1rem;
   transform: scale(1.5);
-  color: var(--darkgrey);
+  color: var(--text-primary);
 `;
 
 const NavIconToFavoritesPage = styled(IoIosHeartEmpty)`
   transform: scale(1.6);
-  color: var(--darkgrey);
+  color: var(--text-primary);
   margin: 1rem 1.3rem;
 `;
 
@@ -130,7 +130,7 @@ const Heading = styled.h1`
   margin: 3.1rem;
   margin-bottom: 1rem;
   font-size: var(--heading-fontsize);
-  color: var(--darkgrey);
+  color: var(--text-primary);
   /* text-decoration: underline;
   text-decoration-color: #764ba2;
   text-decoration-thickness: 0.8rem; */
@@ -155,16 +155,16 @@ const NavFooter = styled.nav`
 
 const NavIconPreviousDay = styled(VscChevronLeft)`
   transform: scale(2.9);
-  color: var(--darkgrey);
+  color: var(--text-primary);
 `;
 
 const NavIconNextDay = styled(VscChevronRight)`
   transform: scale(2.9);
-  color: var(--darkgrey);
+  color: var(--text-primary);
 `;
 
 const StyledNavLink = styled(Link)`
-  color: var(--darkgrey);
+  color: var(--text-primary);
   margin: 1.4rem 1.2rem;
   text-decoration: none;
   font-size: 0.7rem;

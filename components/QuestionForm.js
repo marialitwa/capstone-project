@@ -87,7 +87,7 @@ const StyledTextarea = styled.textarea`
   font-weight: var(--body-fontweight);
   font-size: var(--body-fontsize);
   &::placeholder {
-    color: var(--grey);
+    color: var(--text-secondary);
     font-size: var(--body-fontsize-small);
     letter-spacing: 0.01rem;
     _text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
@@ -114,9 +114,28 @@ const StyledSubmitButton = styled.button`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-appearance: none;
-  background: -webkit-gradient(to right, #ed928a 0%, #f3e5ad 50%, #ed928a 100%);
-  background: linear-gradient(to right, #ed928a 0%, #f3e5ad 50%, #ed928a 100%);
-  background-size: 500%;
+  // BUTTON MORNING COLORS:
+  /* background: -webkit-gradient(to right, #ed928a 0%, #f3e5ad 50%, #ed928a 100%);
+  background: linear-gradient(to right, #ed928a 0%, #f3e5ad 50%, #ed928a 100%); */
+  // BUTTON EVENING COLORS:
+
+  // #E6D0FF
+  // #F5ECFF
+  // #251445
+  // #842B62
+  // #2C6A85
+  // #926AFF
+  // #1caccc
+  // #7d398a
+  // #de73f3
+  // #1f2332
+
+  // #e6d0ff
+  // #d38680
+  // #111239
+  background: -webkit-gradient(to right, #d38680 0%, #c695ff 50%, #d38680 100%);
+  background: linear-gradient(to right, #d38680 0%, #c695ff 50%, #d38680 100%);
+  background-size: 300%;
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -161,14 +180,14 @@ const WrapperSnackbar = styled.div`
 //   margin-bottom: 0.5rem;
 //   margin-top: 1.2rem;
 //   padding: 15px 40px;
-//   background-color: var(--darkgrey);
+//   background-color: var(--text-primary);
 //   _background-color: #434343;
 //   font-weight: 100;
 //   font-family: Quicksand;
 //   color: #faece0;
 //   _color: #fbccc0;
 //   _color: #fdfcfb;
-//   _color: var(--darkgrey);
+//   _color: var(--text-primary);
 //   border: none;
 //   border-radius: 6px;
 //   letter-spacing: 0.05rem;

@@ -6,7 +6,7 @@ import { BsArrowLeft } from "react-icons/bs";
 
 export default function EveningPage({ onAddEveningAnswer }) {
   return (
-    <>
+    <Main>
       {/* <NavHeader>
         <Link href="/">
           <NavIconToHomepage />
@@ -20,17 +20,20 @@ export default function EveningPage({ onAddEveningAnswer }) {
         onAddEntry={onAddEveningAnswer}
         questionText="Was war dein Highlight des Tages?"
       />
-    </>
+    </Main>
   );
 }
 
+const Main = styled.div`
+  background: var(--background-animation);
+`;
 const Heading = styled.h1`
   text-align: center;
   font-weight: 200;
   margin: 0.9rem;
   margin-bottom: 45px;
   font-size: var(--heading-fontsize);
-  color: var(--darkgrey);
+  color: var(--text-primary);
 `;
 
 const StyledLink = styled(Link)`
@@ -40,7 +43,7 @@ const StyledLink = styled(Link)`
 const NavIconToHomepage = styled(BsArrowLeft)`
   transform: scale(1.5);
   margin: 0.3rem 0.5rem;
-  color: var(--darkgrey);
+  color: var(--text-primary);
 `;
 
 // ----- NAV HEADER ------

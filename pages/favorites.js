@@ -88,11 +88,10 @@ const NavHeader = styled.nav`
 `;
 
 const NavIconToHomepage = styled(BsArrowLeft)`
-  color: var(--darkgrey);
+  color: var(--text-primary);
   margin: 1.2rem;
   margin-top: 1rem;
   transform: scale(1.5);
-  color: var(--darkgrey);
 `;
 
 // ----- HEADING + DATE ------
@@ -102,7 +101,7 @@ const Heading = styled.h1`
   margin: 3.1rem;
   margin-bottom: 2rem;
   font-size: var(--heading-fontsize);
-  color: var(--darkgrey);
+  color: var(--text-primary);
 `;
 
 const Wrapper = styled.article`
@@ -121,14 +120,14 @@ const EntryDate = styled.p`
   font-size: var(--body-fontsize-small);
   font-weight: 200;
   _margin-bottom: -0.7rem;
-  color: var(--grey);
+  color: var(--text-secondary);
 `;
 
 const Daytime = styled.p`
   _display: flex;
   _justify-content: center;
   font-size: var(--body-fontsize-small);
-  color: var(--grey);
+  color: var(--text-secondary);
   font-weight: 200;
   letter-spacing: 0.01rem;
   _margin-bottom: 10px;
@@ -148,7 +147,7 @@ const Daytime = styled.p`
 //   display: flex;
 //   justify-content: center;
 //   font-size: var(--body-fontsize-small);
-//   color: var(--grey);
+//   color: var(--text-secondary);
 //   font-weight: 200;
 //   letter-spacing: 0.01rem;
 //   margin-bottom: 10px;
