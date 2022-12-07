@@ -104,4 +104,10 @@ const FavIcon = styled.button`
   margin-bottom: -0.9rem;
   background: none;
   filter: var(--primary-dropshadow);
+
+  &:hover {
+    _transform: scale(1.05);
+    transition: all 1.05s;
+    transform: rotateY(180deg);
+  }
 `;
