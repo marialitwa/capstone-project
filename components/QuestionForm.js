@@ -94,42 +94,6 @@ const StyledTextarea = styled.textarea`
   }
 `;
 
-// Gradient BG Colors: #faece0, #fae6e0, #f5e0ce, #fbccc0
-// const StyledSubmitButton = styled.button`
-//   margin-bottom: 0.5rem;
-//   margin-top: 1.2rem;
-//   padding: 15px 40px;
-//   background-color: var(--darkgrey);
-//   _background-color: #434343;
-//   font-weight: 100;
-//   font-family: Quicksand;
-//   color: #faece0;
-//   _color: #fbccc0;
-//   _color: #fdfcfb;
-//   _color: var(--darkgrey);
-//   border: none;
-//   border-radius: 6px;
-//   letter-spacing: 0.05rem;
-//   font-size: 0.9rem;
-//   text-transform: lowercase;
-//   box-shadow: 3px 3px 1px #ff3870;
-//   &:hover {
-//     cursor: pointer;
-//     background-color: #ff3870;
-//     box-shadow: 3px 3px 1px #4f4f4f;
-//   }
-// `;
-
-//button color palette
-// $green: #a2ccb6
-// $light-peach: #ffecd9
-// $peach: #ee786e
-// lighter peach: #ed928a
-// $sand: #fceeb5
-// sand darker: #f3e5ad;
-// $white: #fff
-// light-yellow: #fff3c1
-
 const StyledSubmitButton = styled.button`
   _height: 2rem;
   width: 10rem;
@@ -190,3 +154,30 @@ const WrapperSnackbar = styled.div`
   top: 120px;
   _top: 440px;
 `;
+
+// ---- PREVIOUS BUTTON STYLE -----
+// Gradient BG Colors: #faece0, #fae6e0, #f5e0ce, #fbccc0
+// const StyledSubmitButton = styled.button`
+//   margin-bottom: 0.5rem;
+//   margin-top: 1.2rem;
+//   padding: 15px 40px;
+//   background-color: var(--darkgrey);
+//   _background-color: #434343;
+//   font-weight: 100;
+//   font-family: Quicksand;
+//   color: #faece0;
+//   _color: #fbccc0;
+//   _color: #fdfcfb;
+//   _color: var(--darkgrey);
+//   border: none;
+//   border-radius: 6px;
+//   letter-spacing: 0.05rem;
+//   font-size: 0.9rem;
+//   text-transform: lowercase;
+//   box-shadow: 3px 3px 1px #ff3870;
+//   &:hover {
+//     cursor: pointer;
+//     background-color: #ff3870;
+//     box-shadow: 3px 3px 1px #4f4f4f;
+//   }
+// `;

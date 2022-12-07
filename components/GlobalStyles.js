@@ -6,8 +6,6 @@ const GlobalStyles = createGlobalStyle`
         src: url("./fonts/Quicksand-VariableFont_wght.ttf");
     }
 
-
-    
     html,
     body {
         padding: 0;
@@ -15,23 +13,19 @@ const GlobalStyles = createGlobalStyle`
         font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 
-
-
     * {
         box-sizing: border-box;
-        _background-color: #F5F4F4; 
     
     }
 
     body {
-        /* #fbccc0, #f5d3ce */
-        //
+       
         /* background: linear-gradient(120deg, rgba(255,236,210,1) 0%, rgba(252,182,159,1) 100%); */
         background: linear-gradient(90deg, #faece0, #fae6e0, #f5e0ce, #fbccc0);
         background-size: 300%;
         animation: gradient-bg 20s ease infinite ;
         color: var(--darkgrey)
-        /* color: #434343; */
+        
     }
     @keyframes gradient-bg {
     0% {
@@ -47,7 +41,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     :root {
-        /* --darkgrey: #434343; */
+        
         --darkgrey: #4f4f4f;
         --grey: #797979;
         --heading-fontsize: 1.9rem;
@@ -56,11 +50,40 @@ const GlobalStyles = createGlobalStyle`
         --body-fontsize: 0.95rem;
         --body-fontweight: 200;
         --body-fontsize-small: 0.8rem;
+        --primary-dropshadow: drop-shadow(1px 1px 2px rgb(0 0 0 / 0.3));
 
         // Usage: button shadow + fav icon
-        --pink: #ff3870;
+         --pink-highlight: #ff3870;
+        
 
     }
 `;
 
 export default GlobalStyles;
+
+// ---- ALL COLOR PALETTES ----
+
+// ---- IN USE: GLOBAL COLOR PALETTE -----
+
+// ---- OPTIONS: GLOBAL COLOR PALETTE -----
+// darkgray: #434343
+// background-color lightgray: #F5F4F4
+
+// ---- BUTTON COLOR PALETTE -----
+// $green: #a2ccb6
+// $light-peach: #ffecd9
+// $peach: #ee786e
+// lighter peach: #ed928a
+// $sand: #fceeb5
+// sand darker: #f3e5ad;
+// $white: #fff
+// light-yellow: #fff3c1
+
+// ---- IN USE: GRADIENT COLOR PALETTE -----
+// #faece0
+// #fae6e0
+// #f5e0ce
+// #fbccc0
+
+// ---- OPTIONS: GRADIENT COLOR PALETTE -----
+// #f5d3ce
