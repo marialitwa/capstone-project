@@ -8,7 +8,7 @@ export default function SnackBar({ text, onClose }) {
     const timeoutID = setTimeout(() => {
       setShowSnack(false);
       onClose?.();
-    }, 100000);
+    }, 3000);
 
     return () => clearTimeout(timeoutID);
   }, []);
