@@ -28,10 +28,11 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background: var(--background-colors);
   background-size: 600%;
   animation: gradient-bg 20s ease infinite;
+
   @keyframes gradient-bg {
     0% {
       background-position: 0% 50%;

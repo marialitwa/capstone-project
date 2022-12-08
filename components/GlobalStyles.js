@@ -37,7 +37,10 @@ const GlobalStyles = createGlobalStyle`
               css`
                 --text-primary-color: #4f4f4f;
                 --text-secondary-color: #797979;
+                --snackbar-font-color: #fae6e0;
                 --accent: #ff3870;
+
+                // BACKGROUND GRADIENT ANIMATION MORNING COLORS
                 --background-colors: linear-gradient(
                   90deg,
                   #faece0,
@@ -45,7 +48,9 @@ const GlobalStyles = createGlobalStyle`
                   #f5e0ce,
                   #fbccc0
                 );
-                background-size: 300%;
+
+                --background-size: 300%;
+                animation: gradient-bg 20s ease infinite;
                 @keyframes gradient-bg {
                   0% {
                     background-position: 0% 50%;
@@ -58,7 +63,7 @@ const GlobalStyles = createGlobalStyle`
                   }
                 }
 
-                animation: gradient-bg 20s ease infinite;
+                // SUBMIT BUTTON EVENING COLORS
                 --calltoaction-colors-webkit: -webkit-gradient(
                   to right,
                   #ed928a 0%,
@@ -76,7 +81,10 @@ const GlobalStyles = createGlobalStyle`
               css`
                 --text-primary-color: #f3f3f3;
                 --text-secondary-color: #d1ced5;
+                --snackbar-font-color: #d1ced5;
                 --accent: #d6406a;
+
+                // BACKGROUND GRADIENT ANIMATION EVENING COLORS
                 --background-colors: linear-gradient(
                   90deg,
                   #987cb6,
@@ -84,6 +92,26 @@ const GlobalStyles = createGlobalStyle`
                   #485074,
                   #323353
                 );
+
+                /* --background-size: 500% */
+                background-size: 500%;
+                animation: gradient-bg 20s ease infinite;
+                @keyframes gradient-bg-evening {
+                  0% {
+                    background-position: 0% 50%;
+                  }
+                  25% {
+                    background-position: 50% 100%;
+                  }
+                  50% {
+                    background-position: 100% 50%;
+                  }
+                  100% {
+                    background-position: 0% 50%;
+                  }
+                }
+
+                // SUBMIT BUTTON EVENING COLORS
                 --calltoaction-colors-webkit: -webkit-gradient(
                   to right,
                   #d38680 0%,

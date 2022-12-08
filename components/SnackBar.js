@@ -8,7 +8,7 @@ export default function SnackBar({ text, onClose }) {
     const timeoutID = setTimeout(() => {
       setShowSnack(false);
       onClose?.();
-    }, 3000);
+    }, 100000);
 
     return () => clearTimeout(timeoutID);
   }, []);
@@ -22,7 +22,7 @@ const StyledSnackbar = styled.p`
   font-weight: 300;
   background-color: rgba(0, 0, 8, 0.66);
   border-radius: 6px;
-  color: #fae6e0;
+  color: var(--snackbar-font-color);
   padding: 30px 50px;
   width: 70vw;
   height: 20vh;
