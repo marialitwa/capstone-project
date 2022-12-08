@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        background: var(--background);
+        background: var(--background-colors);
     }
 
 
@@ -19,58 +19,7 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    /* body {
-        
-        background: var(--background-animation);
 
-        // ---- MORNING BACKGROUND GRADIENT ------
-        /* background: linear-gradient(90deg, #faece0, #fae6e0, #f5e0ce, #fbccc0);
-        background-size: 300%;
-        animation: gradient-bg-morning 20s ease infinite ;
-        color: var(--text-primary)
-    }
-    @keyframes gradient-bg-morning {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    } */
-
-
-    // ---- EVENING BACKGROUND GRADIENT ------
-
-    // #667eea
-    // #764ba2
-    // #58649c
-    // #6674b4
-    // #ba9ed7
-
-        /* background: linear-gradient(90deg, #987cb6, #606a98, #485074, #323353);
-        background-size: 500%;
-        animation: gradient-bg-evening 20s ease infinite ;
-        color: var(--lightgrey);
-        
-    }
-    @keyframes gradient-bg-evening {
-    0% {
-        background-position: 0% 50%;
-    }
-    25% {
-        background-position: 50% 100%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    } 
-    
-}*/
-    
     :root {
         // ---- FONTS & SHADOWS ----
         --heading-fontsize: 1.9rem;
@@ -81,76 +30,74 @@ const GlobalStyles = createGlobalStyle`
         --body-fontsize-small: 0.8rem;
         --primary-dropshadow: drop-shadow(1px 1px 2px rgb(0 0 0 / 0.3));
         
-        // ---- MORNING COLOR THEME ----
-        --text-primary: #4f4f4f;    
-        --text-secondary: #797979;                                
-        --accent: #ff3870;  // Usage: former button shadow + fav icon
-        --background-animation:linear-gradient(90deg, #faece0, #fae6e0, #f5e0ce, #fbccc0);
-        background-size: 300%;
-        animation: gradient-bg-morning 2s ease infinite ;
-        _color: var(--text-primary)
-        
-    }
-
-    @keyframes gradient-bg-morning {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-        // ----  EVENING COLOR THEME ----   
-        
-        [data-theme="dark"] {
-       --text-primary: #F3F3F3;
-       --text-secondary: #D1CED5;
-       --accent: #D6406A;
-    
-       --background-animation:linear-gradient(90deg, #987cb6, #606a98, #485074, #323353);
-        
        
-       
+        ${() =>
+          new Date().getHours() <= 18 && new Date().getHours() >= 6
+            ? // ---- MORNING COLOR THEME ----
+              css`
+                --text-primary-color: #4f4f4f;
+                --text-secondary-color: #797979;
+                --accent: #ff3870;
+                --background-colors: linear-gradient(
+                  90deg,
+                  #faece0,
+                  #fae6e0,
+                  #f5e0ce,
+                  #fbccc0
+                );
+                background-size: 300%;
+                @keyframes gradient-bg {
+                  0% {
+                    background-position: 0% 50%;
+                  }
+                  50% {
+                    background-position: 100% 50%;
+                  }
+                  100% {
+                    background-position: 0% 50%;
+                  }
+                }
+
+                animation: gradient-bg 20s ease infinite;
+                --calltoaction-colors-webkit: -webkit-gradient(
+                  to right,
+                  #ed928a 0%,
+                  #f3e5ad 50%,
+                  #ed928a 100%
+                );
+                --calltoaction-colors: linear-gradient(
+                  to right,
+                  #ed928a 0%,
+                  #f3e5ad 50%,
+                  #ed928a 100%
+                );
+              `
+            : // ---- EVENING COLOR THEME ----
+              css`
+                --text-primary-color: #f3f3f3;
+                --text-secondary-color: #d1ced5;
+                --accent: #d6406a;
+                --background-colors: linear-gradient(
+                  90deg,
+                  #987cb6,
+                  #606a98,
+                  #485074,
+                  #323353
+                );
+                --calltoaction-colors-webkit: -webkit-gradient(
+                  to right,
+                  #d38680 0%,
+                  #c695ff 50%,
+                  #d38680 100%
+                );
+                --calltoaction-colors: linear-gradient(
+                  to right,
+                  #d38680 0%,
+                  #c695ff 50%,
+                  #d38680 100%
+                );
+              `}   
     }
-  
-        
-
-        /* BUTTON MORNING COLORS:
-          background: -webkit-gradient(to right, #ed928a 0%, #f3e5ad 50%, #ed928a 100%);
-
-        BUTTON EVENING COLORS:        
-        BACKGROUND GRADIENT ?  */
-
 `;
 
 export default GlobalStyles;
-
-// ---- ALL COLOR PALETTES ----
-
-// ---- IN USE: GLOBAL COLOR PALETTE -----
-
-// ---- OPTIONS: GLOBAL COLOR PALETTE -----
-// darkgray: #434343
-// background-color lightgray: #F5F4F4
-
-// ---- BUTTON COLOR PALETTE -----
-// $green: #a2ccb6
-// $light-peach: #ffecd9
-// $peach: #ee786e
-// lighter peach: #ed928a
-// $sand: #fceeb5
-// sand darker: #f3e5ad;
-// $white: #fff
-// light-yellow: #fff3c1
-
-// ---- IN USE: GRADIENT COLOR PALETTE -----
-// #faece0
-// #fae6e0
-// #f5e0ce
-// #fbccc0
-
-// ---- OPTIONS: GRADIENT COLOR PALETTE -----
-// #f5d3ce

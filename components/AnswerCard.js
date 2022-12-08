@@ -67,33 +67,31 @@ const StyledCard = styled.article`
 const StyledQuestion = styled.p`
   display: flex;
   justify-content: center;
-  font-size: var(--body-fontsize-small);
-  color: var(--text-secondary);
-  font-weight: 200;
-  letter-spacing: 0.01rem;
   margin-bottom: 10px;
+  font-size: var(--body-fontsize-small);
+  font-weight: var(--body-fontweight);
+  letter-spacing: 0.01rem;
+  color: var(--text-secondary-color);
 `;
 
 const StyledAnswer = styled.p`
-  _display: flex;
-  _justify-content: center;
-  _padding: 10px 12px;
   margin-bottom: 10px;
-  font-size: var(--body-fontsize);
   text-align: center;
-  font-weight: 300;
+  font-size: var(--body-fontsize);
+  font-weight: var(--body-fontweight);
   line-height: 140%;
-  _max-width: 100vw;
+  color: var(--text-primary-color);
 `;
 
 const StyledPlaceholder = styled.p`
   display: flex;
   justify-content: center;
-  font-size: var(--body-fontsize-small);
   text-align: center;
-  font-weight: 300;
+  font-size: var(--body-fontsize-small);
+  font-weight: var(--body-fontweight);
   line-height: 140%;
   font-style: italic;
+  color: var(--text-primary-color);
 `;
 
 const FavIcon = styled.button`
@@ -106,7 +104,6 @@ const FavIcon = styled.button`
   filter: var(--primary-dropshadow);
 
   &:hover {
-    _transform: scale(1.05);
     transition: all 1.05s;
     transform: rotateY(180deg);
   }

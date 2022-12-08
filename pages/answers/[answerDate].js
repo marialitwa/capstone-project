@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 // ---- NAV ICONS -----
 import { VscChevronLeft } from "react-icons/vsc";
 import { VscChevronRight } from "react-icons/vsc";
-// import { TfiHome } from "react-icons/tfi";
 import { BsArrowLeft } from "react-icons/bs";
 import { IoIosHeartEmpty } from "react-icons/io";
 
@@ -93,9 +92,23 @@ export default function AnswersPage({
 
 const Main = styled.main`
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  background: var(--background-colors);
+  background-size: 600%;
+  animation: gradient-bg 20s ease infinite;
+  @keyframes gradient-bg {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 `;
 
 // ----- NAV HEADER ------
@@ -110,37 +123,34 @@ const NavHeader = styled.nav`
 `;
 
 const NavIconToHomepage = styled(BsArrowLeft)`
-  color: var(--text-primary);
+  color: var(--text-primary-color);
   margin: 1.2rem;
   margin-top: 1rem;
   transform: scale(1.5);
-  color: var(--text-primary);
 `;
 
 const NavIconToFavoritesPage = styled(IoIosHeartEmpty)`
   transform: scale(1.6);
-  color: var(--text-primary);
+  color: var(--text-primary-color);
   margin: 1rem 1.3rem;
 `;
 
 // ----- HEADING + DATE ------
 const Heading = styled.h1`
   text-align: center;
-  font-weight: 200;
   margin: 3.1rem;
   margin-bottom: 1rem;
+  color: var(--text-primary-color);
   font-size: var(--heading-fontsize);
-  color: var(--text-primary);
-  /* text-decoration: underline;
-  text-decoration-color: #764ba2;
-  text-decoration-thickness: 0.8rem; */
+  font-weight: var(--body-fontweight);
 `;
 
 const EntryDate = styled.p`
   text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-primary-color);
   font-size: var(--date-fontsize);
   font-weight: var(--date-fontweight);
-  margin-bottom: 2rem;
 `;
 
 // ----- NAV FOOTER ------
@@ -155,16 +165,16 @@ const NavFooter = styled.nav`
 
 const NavIconPreviousDay = styled(VscChevronLeft)`
   transform: scale(2.9);
-  color: var(--text-primary);
+  color: var(--text-primary-color);
 `;
 
 const NavIconNextDay = styled(VscChevronRight)`
   transform: scale(2.9);
-  color: var(--text-primary);
+  color: var(--text-primary-color);
 `;
 
 const StyledNavLink = styled(Link)`
-  color: var(--text-primary);
+  color: var(--text-primary-color);
   margin: 1.4rem 1.2rem;
   text-decoration: none;
   font-size: 0.7rem;

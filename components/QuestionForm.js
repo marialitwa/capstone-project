@@ -60,7 +60,9 @@ export default function QuestionForm({ onAddEntry, questionText }) {
 
 const Main = styled.div`
   position: relative;
+  height: 100vh;
 `;
+
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -68,79 +70,59 @@ const Form = styled.form`
 `;
 
 const StyledQuestion = styled.label`
-  font-weight: var(--body-fontweight);
-  font-size: var(--body-fontsize);
   margin-bottom: 12px;
+  font-size: var(--body-fontsize);
+  font-weight: var(--body-fontweight);
+  color: var(--text-primary-color);
 `;
 
 const StyledTextarea = styled.textarea`
   outline: none;
   padding: 15px;
   background: rgba(255, 255, 255, 0.2);
-  _background: none;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   font-family: Quicksand;
-  font-weight: var(--body-fontweight);
   font-size: var(--body-fontsize);
+  font-weight: var(--body-fontweight);
+  color: var(--text-primary-color);
+
   &::placeholder {
-    color: var(--text-secondary);
+    color: var(--text-secondary-color);
     font-size: var(--body-fontsize-small);
     letter-spacing: 0.01rem;
-    _text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
   }
 `;
 
 const StyledSubmitButton = styled.button`
-  _height: 2rem;
   width: 10rem;
   margin-bottom: 0.5rem;
   margin-top: 2rem;
-  _margin-top: 4rem;
   padding: 15px 40px;
   font-size: 0.9rem;
+  font-weight: 500;
   letter-spacing: 0.05em;
-  text-transform: lowercase;
   color: #fff;
+  text-transform: lowercase;
   outline: none;
   border: none;
-  border-radius: 110px;
-  _border-radius: 5rem;
+  border-radius: 5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   cursor: pointer;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-appearance: none;
-  // BUTTON MORNING COLORS:
-  /* background: -webkit-gradient(to right, #ed928a 0%, #f3e5ad 50%, #ed928a 100%);
-  background: linear-gradient(to right, #ed928a 0%, #f3e5ad 50%, #ed928a 100%); */
-  // BUTTON EVENING COLORS:
-
-  // #E6D0FF
-  // #F5ECFF
-  // #251445
-  // #842B62
-  // #2C6A85
-  // #926AFF
-  // #1caccc
-  // #7d398a
-  // #de73f3
-  // #1f2332
-
-  // #e6d0ff
-  // #d38680
-  // #111239
-  background: -webkit-gradient(to right, #d38680 0%, #c695ff 50%, #d38680 100%);
-  background: linear-gradient(to right, #d38680 0%, #c695ff 50%, #d38680 100%);
-  background-size: 300%;
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background: var(--calltoaction-colors-webkit);
+  background: var(--calltoaction-colors);
+  background-size: 300%;
 
   &:hover {
     animation-name: gradient;
@@ -152,7 +134,6 @@ const StyledSubmitButton = styled.button`
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
   }
-
   @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -171,32 +152,4 @@ const WrapperSnackbar = styled.div`
   position: absolute;
   left: 57px;
   top: 120px;
-  _top: 440px;
 `;
-
-// ---- PREVIOUS BUTTON STYLE -----
-// Gradient BG Colors: #faece0, #fae6e0, #f5e0ce, #fbccc0
-// const StyledSubmitButton = styled.button`
-//   margin-bottom: 0.5rem;
-//   margin-top: 1.2rem;
-//   padding: 15px 40px;
-//   background-color: var(--text-primary);
-//   _background-color: #434343;
-//   font-weight: 100;
-//   font-family: Quicksand;
-//   color: #faece0;
-//   _color: #fbccc0;
-//   _color: #fdfcfb;
-//   _color: var(--text-primary);
-//   border: none;
-//   border-radius: 6px;
-//   letter-spacing: 0.05rem;
-//   font-size: 0.9rem;
-//   text-transform: lowercase;
-//   box-shadow: 3px 3px 1px #ff3870;
-//   &:hover {
-//     cursor: pointer;
-//     background-color: #ff3870;
-//     box-shadow: 3px 3px 1px #4f4f4f;
-//   }
-// `;

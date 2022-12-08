@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import AnswerCard from "../components/AnswerCard";
-// import { TfiHome } from "react-icons/tfi";
 import { BsArrowLeft } from "react-icons/bs";
 
 export default function FavoriteAnswers({
@@ -73,7 +72,21 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  background: var(--background-colors);
+  background-size: 600%;
+  animation: gradient-bg 20s ease infinite;
+  @keyframes gradient-bg {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 `;
 
 // ----- NAV HEADER ------
@@ -88,7 +101,7 @@ const NavHeader = styled.nav`
 `;
 
 const NavIconToHomepage = styled(BsArrowLeft)`
-  color: var(--text-primary);
+  color: var(--text-primary-color);
   margin: 1.2rem;
   margin-top: 1rem;
   transform: scale(1.5);
@@ -97,11 +110,11 @@ const NavIconToHomepage = styled(BsArrowLeft)`
 // ----- HEADING + DATE ------
 const Heading = styled.h1`
   text-align: center;
-  font-weight: 200;
   margin: 3.1rem;
   margin-bottom: 2rem;
   font-size: var(--heading-fontsize);
-  color: var(--text-primary);
+  font-weight: var(--body-fontweight);
+  color: var(--text-primary-color);
 `;
 
 const Wrapper = styled.article`
@@ -117,38 +130,18 @@ const Wrapper = styled.article`
 
 const EntryDate = styled.p`
   _text-align: center;
-  font-size: var(--body-fontsize-small);
-  font-weight: 200;
   _margin-bottom: -0.7rem;
-  color: var(--text-secondary);
+  font-size: var(--body-fontsize-small);
+  font-weight: var(--body-fontweight);
+  color: var(--text-secondary-color);
 `;
 
 const Daytime = styled.p`
   _display: flex;
   _justify-content: center;
-  font-size: var(--body-fontsize-small);
-  color: var(--text-secondary);
-  font-weight: 200;
-  letter-spacing: 0.01rem;
   _margin-bottom: 10px;
+  font-size: var(--body-fontsize-small);
+  color: var(--text-secondary-color);
+  font-weight: var(--body-fontweight);
+  letter-spacing: 0.01rem;
 `;
-
-// const StyledQuestion = styled.p`
-//   display: flex;
-//   justify-content: center;
-//   margin-bottom: -1rem;
-//   font-size: 0.8rem;
-//   color: #757474;
-//   font-weight: 300;
-// `;
-
-// STYLED QUESTION AUS ANSWERCARD.JS
-// const StyledQuestion = styled.p`
-//   display: flex;
-//   justify-content: center;
-//   font-size: var(--body-fontsize-small);
-//   color: var(--text-secondary);
-//   font-weight: 200;
-//   letter-spacing: 0.01rem;
-//   margin-bottom: 10px;
-// `;
