@@ -22,8 +22,8 @@ const Main = styled.main`
   _display: flex;
   min-height: 100vh;
   background: var(--background-colors);
-  background-size: 600%;
-  animation: gradient-bg 20s ease infinite;
+  background-size: var(--background-size);
+  animation: var(--gradient-animation);
   @keyframes gradient-bg {
     0% {
       background-position: 0% 50%;

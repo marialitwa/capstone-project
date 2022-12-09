@@ -49,9 +49,9 @@ const GlobalStyles = createGlobalStyle`
                   #fbccc0
                 );
 
-                --background-size: 300%;
-                animation: gradient-bg 20s ease infinite;
-                @keyframes gradient-bg {
+                --background-size: 600%;
+                --gradient-animation: gradient-bg-morning 20s ease infinite;
+                @keyframes gradient-bg-morning {
                   0% {
                     background-position: 0% 50%;
                   }
@@ -93,9 +93,9 @@ const GlobalStyles = createGlobalStyle`
                   #323353
                 );
 
-                /* --background-size: 500% */
-                background-size: 500%;
-                animation: gradient-bg 20s ease infinite;
+                --background-size: 600%;
+                --gradient-animation: gradient-bg-evening 20s ease infinite;
+                // EVENING ANIMATION KEYFRAMES
                 @keyframes gradient-bg-evening {
                   0% {
                     background-position: 0% 50%;
