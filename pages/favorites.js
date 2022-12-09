@@ -63,6 +63,17 @@ export default function FavoriteAnswers({
               </div>
             )
         )}
+
+        {morningAnswers.find((answerText) => answerText.isFavorite) ===
+          undefined &&
+        eveningAnswers.find((answerText) => answerText.isFavorite) ===
+          undefined ? (
+          <PlaceholderText>
+            Du hast noch keine Highlights ausgewählt.
+          </PlaceholderText>
+        ) : (
+          ""
+        )}
       </div>
     </Main>
   );
@@ -133,4 +144,11 @@ const Daytime = styled.p`
   color: var(--text-secondary-color);
   font-weight: var(--body-fontweight);
   letter-spacing: 0.01rem;
+`;
+
+const PlaceholderText = styled.p`
+  margin-top: 2rem;
+  font-size: var(--body-fontsize);
+  color: var(--text-primary-color);
+  font-weight: var(--body-fontweight);
 `;
