@@ -11,20 +11,6 @@ function MyApp({ Component, pageProps }) {
         createdDate: "2022-12-10T11:38:27.814Z",
         isFavorite: false,
       },
-
-      // {
-      //   id: "7d8ad4b5-08c6-4214-b29a-09aec355904f",
-      //   text: "Ich freue mich heute darauf meinen Code nach der Review weiter zu verbessern und im Austausch zu sein",
-      //   createdDate: "2022-11-28T08:27:49.978Z",
-      //   isFavorite: false,
-      // },
-
-      // {
-      //   id: "8fbbf6d3-d547-4a76-b3a8-198cc046e523",
-      //   text: "Ich freu mich darauf heute Abend wirklich sehr leckeres schwedisches Gebäck im Arket Café dank der ToGoodToGo App abzuholen. Das Gebäck würde man sonst nämlich wegwerfen und dafür ist es einfach viel zu lecker.",
-      //   createdDate: "2022-11-29T09:11:25.632Z",
-      //   isFavorite: false,
-      // },
     ]
   );
 
@@ -45,13 +31,6 @@ function MyApp({ Component, pageProps }) {
         createdDate: "2022-12-10T21:40:40.423Z",
         isFavorite: false,
       },
-
-      // {
-      //   id: "44219f41-a977-43c9-aa81-4dcee98ebe6a",
-      //   text: "Das was ich die Tage Neues gelernt habe, konnte ich heute im Team weitergeben und habe zum Lösen kleinerer Probleme helfen können. Und genauso andersherum.",
-      //   createdDate: "2022-11-29T16:22:44.670Z",
-      //   isFavorite: false,
-      // },
     ]
   );
 

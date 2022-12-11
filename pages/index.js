@@ -59,7 +59,7 @@ const StyledLink = styled(Link)`
   font-weight: var(--date-fontweight);
   color: var(--text-primary-color);
 
-  /* From https://css.glass */
+  //glass effect
   background: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
