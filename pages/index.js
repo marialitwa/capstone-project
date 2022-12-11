@@ -8,16 +8,14 @@ export default function Home() {
     month: "long",
   });
 
-  const currentDate = new Date()
-    .toLocaleDateString("de-DE")
-    .replaceAll(".", "-");
+  const currentDate = new Date().toLocaleDateString("de-DE");
 
   return (
     <Main>
       <Heading>Das Beste des Tages.</Heading>
       <CurrentDate>{date}</CurrentDate>
-      <StyledLink href="/morning">Gedanken am Morgen</StyledLink>
-      <StyledLink href="/evening">Gedanken am Abend</StyledLink>
+      <StyledLink href="/morning">Gutes am Morgen</StyledLink>
+      <StyledLink href="/evening">Gutes am Abend</StyledLink>
       <StyledLink href={`/answers/${currentDate}`}>Dein Journal</StyledLink>
       <StyledLink href="/favorites">Deine Highlights</StyledLink>
     </Main>
