@@ -8,16 +8,14 @@ export default function Home() {
     month: "long",
   });
 
-  const currentDate = new Date()
-    .toLocaleDateString("de-DE")
-    .replaceAll(".", "-");
+  const currentDate = new Date().toLocaleDateString("de-DE");
 
   return (
     <Main>
       <Heading>Das Beste des Tages.</Heading>
       <CurrentDate>{date}</CurrentDate>
-      <StyledLink href="/morning">Frage am Morgen</StyledLink>
-      <StyledLink href="/evening">Frage am Abend</StyledLink>
+      <StyledLink href="/morning">Gutes am Morgen</StyledLink>
+      <StyledLink href="/evening">Gutes am Abend</StyledLink>
       <StyledLink href={`/answers/${currentDate}`}>Dein Journal</StyledLink>
       <StyledLink href="/favorites">Deine Highlights</StyledLink>
     </Main>
@@ -28,27 +26,53 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  background: var(--background-colors);
+  background-size: var(--background-size);
+  animation: var(--gradient-animation);
 `;
 
 const Heading = styled.h1`
   text-align: center;
-  margin: 61px 30px 50px;
+  margin: 50px 30px 15px;
+  font-size: var(--heading-fontsize);
+  font-weight: var(--body-fontweight);
+  color: var(--text-primary-color);
 `;
 
 const CurrentDate = styled.p`
-  margin-bottom: 80px;
+  margin-bottom: 50px;
+  font-size: var(--date-fontsize);
+  font-weight: var(--date-fontweight);
+  color: var(--text-primary-color);
 `;
 
 const StyledLink = styled(Link)`
   margin: 0.5rem;
-  padding: 1.2rem;
-  background-color: #434343;
-  color: #fdfcfb;
+  padding: 2rem;
   border: none;
   text-decoration: none;
-  width: 200px;
-  height: 60px;
+  width: 240px;
+  height: 90px;
   text-align: center;
-  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: var(--date-fontweight);
+  color: var(--text-primary-color);
+
+  //glass effect
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 `;

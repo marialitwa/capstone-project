@@ -9,7 +9,6 @@ export default function AnswerCard({
   return (
     <StyledCard>
       <StyledQuestion>{questionText}</StyledQuestion>
-
       {answerText.length === 0 ? (
         <StyledPlaceholder>Kein Eintrag</StyledPlaceholder>
       ) : (
@@ -26,24 +25,22 @@ export default function AnswerCard({
               {morningAnswer.isFavorite ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  height="25px"
-                  viewBox="0 0 24 24"
-                  width="25px"
-                  fill="#764ba2"
+                  height="50"
+                  width="50"
+                  viewBox="-15 0 70 70"
+                  fill="var(--accent)"
                 >
-                  <path d="M0 0h24v24H0z" fill="none" />
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                  <path d="m20 32-.75-.708q-4.083-3.709-6.729-6.375-2.646-2.667-4.209-4.646-1.562-1.979-2.145-3.583-.584-1.605-.584-3.188 0-2.917 1.979-4.896 1.98-1.979 4.855-1.979 2.25 0 4.166 1.229Q18.5 9.083 20 11.5q1.542-2.417 3.438-3.646 1.895-1.229 4.145-1.229 2.875 0 4.855 1.979 1.979 1.979 1.979 4.896 0 1.583-.584 3.188-.583 1.604-2.145 3.583-1.563 1.979-4.209 4.646-2.646 2.666-6.729 6.375Z" />
                 </svg>
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  height="25px"
-                  viewBox="0 0 24 24"
-                  width="25px"
-                  fill="#764ba2"
+                  height="50"
+                  width="50"
+                  viewBox="-15 0 70 70"
+                  fill="var(--accent)"
                 >
-                  <path d="M0 0h24v24H0z" fill="none" />
-                  <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z" />
+                  <path d="m20 32-.75-.708q-4.083-3.709-6.729-6.375-2.646-2.667-4.209-4.646-1.562-1.979-2.145-3.583-.584-1.605-.584-3.188 0-2.875 1.979-4.875 1.98-2 4.855-2 2.25 0 4.166 1.229Q18.5 9.083 20 11.5q1.542-2.417 3.438-3.646 1.895-1.229 4.145-1.229 2.875 0 4.855 1.979 1.979 1.979 1.979 4.896 0 1.583-.584 3.188-.583 1.604-2.125 3.583-1.541 1.979-4.208 4.646-2.667 2.666-6.75 6.375Zm0-1.292q4-3.666 6.625-6.27 2.625-2.605 4.146-4.542 1.521-1.938 2.104-3.438.583-1.5.583-2.958 0-2.5-1.708-4.208-1.708-1.709-4.167-1.709-2.125 0-3.812 1.188-1.688 1.187-3.313 3.812h-.916q-1.667-2.625-3.354-3.812-1.688-1.188-3.771-1.188-2.417 0-4.146 1.709Q6.542 11 6.542 13.542q0 1.458.604 2.937.604 1.479 2.104 3.417 1.5 1.937 4.104 4.542 2.604 2.604 6.646 6.27Zm0-11.583Z" />
                 </svg>
               )}
             </FavIcon>
@@ -54,42 +51,47 @@ export default function AnswerCard({
   );
 }
 
+const StyledCard = styled.article`
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 78vw;
+  padding: 10px 25px;
+  margin-bottom: 0.8rem;
+  position: relative;
+`;
+
 const StyledQuestion = styled.p`
   display: flex;
   justify-content: center;
-  margin-bottom: -10px;
-  font-size: 0.8rem;
-  color: #757474;
-  font-weight: 300;
+  margin-bottom: 10px;
+  font-size: var(--body-fontsize-small);
+  font-weight: var(--body-fontweight);
+  letter-spacing: 0.01rem;
+  color: var(--text-secondary-color);
 `;
 
 const StyledAnswer = styled.p`
-  display: flex;
-  justify-content: center;
-  padding: 5px 40px;
   margin-bottom: 10px;
-  font-size: 1rem;
   text-align: center;
-  font-weight: 300;
+  font-size: var(--body-fontsize);
+  font-weight: var(--body-fontweight);
   line-height: 140%;
-  max-width: 100vw;
+  color: var(--text-primary-color);
 `;
 
 const StyledPlaceholder = styled.p`
   display: flex;
   justify-content: center;
-  padding: 1rem 2rem;
-  margin-bottom: 60px;
-  font-size: 0.8rem;
   text-align: center;
-  font-weight: 300;
+  font-size: var(--body-fontsize-small);
+  font-weight: var(--body-fontweight);
   line-height: 140%;
-  max-width: 100vw;
   font-style: italic;
-`;
-
-const StyledCard = styled.article`
-  _border: 1px solid hotpink;
+  color: var(--text-primary-color);
 `;
 
 const FavIcon = styled.button`
@@ -97,5 +99,12 @@ const FavIcon = styled.button`
   justify-content: center;
   border: none;
   margin: auto;
-  margin-bottom: 4rem;
+  margin-bottom: -0.9rem;
+  background: none;
+  filter: var(--primary-dropshadow);
+
+  &:hover {
+    transition: all 1.05s;
+    transform: rotateY(180deg);
+  }
 `;
