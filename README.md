@@ -20,6 +20,7 @@ Take a look at the app [here on Vercel](https://das-beste-des-tages.vercel.app/)
 
 - React
 - React Hooks
+- React Icons
 - Next.js
 - Next.js Router
 - Javascript
