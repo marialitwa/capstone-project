@@ -32,17 +32,4 @@ it("renderAnswerCard", () => {
   );
   expect(createdDate).toHaveValue("2022-12-10T11:38:27.814Z");
   expect(isFavorite).toHaveValue(false);
-
-  //   screen.debug();
 });
-
-// describe("AnswerCard", () => {
-
-//     it("renders questionText, answerText, createdDate and id text of an entry", () => {
-//         const event = {
-//             questionText: "text"
-//             answerText={filteredMorningAnswers}
-// toggleFavorite={toggleFavorite}
-//         }
-//     })
-// })
