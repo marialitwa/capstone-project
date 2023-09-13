@@ -20,7 +20,7 @@ export default function AnswersPage({
 
   if (!answerDate) return;
 
-  const [day, month, year] = answerDate.split("-");
+  const [day, month, year] = answerDate.split(".");
 
   const answerPageDate = new Date(year, Number(month) - 1, day);
 
@@ -36,11 +36,9 @@ export default function AnswersPage({
 
   const previousDate = new Date(year, Number(month) - 1, Number(day) - 1)
     .toLocaleDateString("de-DE")
-    .replaceAll(".", "-");
 
   const nextDate = new Date(year, Number(month) - 1, Number(day) + 1)
     .toLocaleDateString("de-DE")
-    .replaceAll(".", "-");
 
   const today = new Date();
 
@@ -57,8 +55,6 @@ export default function AnswersPage({
         </NavHeader>
         <Heading>Dein Journal.</Heading>
 
-      {/* Conditional einbauen: Wenn EntryDate nicht heutiges Datum (CurrentDate), dann zeige hier heutiges Datum statt EntryDate */}
-        {/* <CurrentDate>Datum heute: 12.07.</CurrentDate> */}
         <EntryDate>
           {answerPageDate.toLocaleDateString("de-DE", {
             weekday: "long",
