@@ -78,6 +78,10 @@ const StyledQuestion = styled.label`
 
 const StyledTextarea = styled.textarea`
   outline: none;
+  
+  // NEUER CODE NACH BOOTCAMP
+  resize: none;
+  // NEUER CODE NACH BOOTCAMP
   padding: 15px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 12px;

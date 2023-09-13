@@ -19,6 +19,7 @@ export default function AnswersPage({
   const { answerDate } = router.query;
 
   if (!answerDate) return;
+
   const [day, month, year] = answerDate.split("-");
 
   const answerPageDate = new Date(year, Number(month) - 1, day);
@@ -55,6 +56,9 @@ export default function AnswersPage({
           </Link>
         </NavHeader>
         <Heading>Dein Journal.</Heading>
+
+      {/* Conditional einbauen: Wenn EntryDate nicht heutiges Datum (CurrentDate), dann zeige hier heutiges Datum statt EntryDate */}
+        {/* <CurrentDate>Datum heute: 12.07.</CurrentDate> */}
         <EntryDate>
           {answerPageDate.toLocaleDateString("de-DE", {
             weekday: "long",
@@ -89,6 +93,10 @@ export default function AnswersPage({
     </>
   );
 }
+
+
+
+
 
 const Main = styled.main`
   display: flex;
@@ -141,6 +149,15 @@ const EntryDate = styled.p`
   font-size: var(--date-fontsize);
   font-weight: var(--date-fontweight);
 `;
+
+// const CurrentDate = styled.p`
+//   text-align: center;
+//   color: hotpink;
+//   margin-bottom: 2rem;
+//   color: var(--text-primary-color);
+//   font-size: var(--date-fontsize);
+//   font-weight: var(--date-fontweight);
+// `;
 
 // ----- NAV FOOTER ------
 const NavFooter = styled.nav`
