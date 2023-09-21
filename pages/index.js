@@ -14,10 +14,12 @@ export default function Home() {
     <Main>
       <Heading>Das Beste des Tages.</Heading>
       <CurrentDate>{date}</CurrentDate>
-      <StyledLink href="/morning">Gutes am Morgen</StyledLink>
-      <StyledLink href="/evening">Gutes am Abend</StyledLink>
-      <StyledLink href={`/answers/${currentDate}`}>Dein Journal</StyledLink>
-      <StyledLink href="/favorites">Deine Highlights</StyledLink>
+      <LinkContainer>
+        <StyledLink href="/morning">Gutes am Morgen</StyledLink>
+        <StyledLink href="/evening">Gutes am Abend</StyledLink>
+        <StyledLink href={`/answers/${currentDate}`}>Dein Journal</StyledLink>
+        <StyledLink href="/favorites">Deine Highlights</StyledLink>
+      </LinkContainer>
     </Main>
   );
 }
@@ -45,6 +47,29 @@ const CurrentDate = styled.p`
   font-size: var(--date-fontsize);
   font-weight: var(--date-fontweight);
   color: var(--text-primary-color);
+`;
+
+
+
+const LinkContainer = styled.div`
+
+//  SMALL SCREEN 
+
+  @media (min-width: 250px)   {
+    display: flex;
+    flex-direction: column;
+  }
+
+//  LARGE SCREEN  
+    
+    @media (min-width: 900px)  {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 600px;
+      justify-content: center;
+      margin-top: 5%;
+    }
 `;
 
 const StyledLink = styled(Link)`
@@ -75,4 +100,20 @@ const StyledLink = styled(Link)`
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+
+  //  LARGE SCREEN 
+    @media (min-width: 768px) {
+
+      _width: 250px;
+      text-align: center;
+
+
+  
+
+    
+
+  
 `;
+
+
