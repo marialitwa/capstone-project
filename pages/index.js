@@ -62,13 +62,13 @@ const LinkContainer = styled.div`
 
 //  LARGE SCREEN  
     
-    @media (min-width: 768px)  {
+    @media (min-width: 900px)  {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       width: 600px;
       justify-content: center;
-      margin-top: 40px;
+      margin-top: 5%;
     }
 `;
 
