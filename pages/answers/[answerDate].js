@@ -20,7 +20,7 @@ export default function AnswersPage({
 
   if (!answerDate) return;
 
-  const [day, month, year] = answerDate.split(".");
+  const [day, month, year] = answerDate.split("-");
 
   const answerPageDate = new Date(year, Number(month) - 1, day);
 
