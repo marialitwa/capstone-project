@@ -1,4 +1,4 @@
-# My Capstone Project: Das Beste des Tages. / The Best of Your Day.
+# My Capstone Project: Das Beste des Tages. / The Best of Your Day
 
 My web app **Das Beste des Tages./The Best of Your Day.** helps to focus on the positive things on a daily basis. In the mornings you can reflect on what you're looking forward to today. In the evenings about what was your highlight during the day, what made you feel happy. The best feature is that you can treasure your chosen highlights, and that would be your feel good booster whenever you need one. It was made with Next.js.
 
@@ -29,6 +29,3 @@ Take a look at the app [here on Vercel](https://das-beste-des-tages.vercel.app/)
 - uuid
 - Jest
 - React Testing Library
-
----
-
